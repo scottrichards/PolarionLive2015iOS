@@ -8,6 +8,14 @@
 
 #import "AppDelegate.h"
 
+#import <Parse/Parse.h>
+#import <ParseFacebookUtilsv4/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//
+//#import <UIKit/UIKit.h>
+//#import <Foundation/Foundation.h>
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +25,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  
+  [Parse setApplicationId:@"ytC7lrxAdRDvguofSHtRLyPe8DdiO5MdC4VdMDoz" clientKey:@"GIX1MZRR1rPqQGEOTEKwyNa6FuHWLhuiy3HyrVPt"];
+  
+  // ****************************************************************************
+  // Your Facebook application id is configured in Info.plist.
+  // ****************************************************************************
+  return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                  didFinishLaunchingWithOptions:launchOptions];
+
   return YES;
 }
 
@@ -35,12 +52,13 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-  // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//  [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
+// Called when the application is about to terminate. Save data if appropriate.
 - (void)applicationWillTerminate:(UIApplication *)application {
-  // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   // Saves changes in the application's managed object context before the application terminates.
+//  [[PFFacebookUtils session] close];
   [self saveContext];
 }
 

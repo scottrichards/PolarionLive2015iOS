@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01673EE51B842121003BF37F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673EE41B842121003BF37F /* main.m */; };
+		01673EE81B842121003BF37F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673EE71B842121003BF37F /* AppDelegate.m */; };
+		01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01673EE91B842121003BF37F /* PolarionLive2015.xcdatamodeld */; };
+		01673EEE1B842121003BF37F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673EED1B842121003BF37F /* ViewController.m */; };
+		01673EF11B842121003BF37F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01673EEF1B842121003BF37F /* Main.storyboard */; };
+		01673EF31B842121003BF37F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01673EF21B842121003BF37F /* Images.xcassets */; };
+		01673EF61B842121003BF37F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01673EF41B842121003BF37F /* LaunchScreen.xib */; };
+		01673F021B842121003BF37F /* PolarionLive2015Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673F011B842121003BF37F /* PolarionLive2015Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01673EFC1B842121003BF37F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01673ED71B842121003BF37F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01673EDE1B842121003BF37F;
+			remoteInfo = PolarionLive2015;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01673EDF1B842121003BF37F /* PolarionLive2015.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarionLive2015.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01673EE31B842121003BF37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01673EE41B842121003BF37F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		01673EE61B842121003BF37F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		01673EE71B842121003BF37F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		01673EEA1B842121003BF37F /* PolarionLive2015.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PolarionLive2015.xcdatamodel; sourceTree = "<group>"; };
+		01673EEC1B842121003BF37F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		01673EED1B842121003BF37F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		01673EF01B842121003BF37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		01673EF21B842121003BF37F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		01673EF51B842121003BF37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		01673EFB1B842121003BF37F /* PolarionLive2015Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolarionLive2015Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01673F001B842121003BF37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01673F011B842121003BF37F /* PolarionLive2015Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PolarionLive2015Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01673EDC1B842121003BF37F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01673EF81B842121003BF37F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01673ED61B842121003BF37F = {
+			isa = PBXGroup;
+			children = (
+				01673EE11B842121003BF37F /* PolarionLive2015 */,
+				01673EFE1B842121003BF37F /* PolarionLive2015Tests */,
+				01673EE01B842121003BF37F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01673EE01B842121003BF37F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01673EDF1B842121003BF37F /* PolarionLive2015.app */,
+				01673EFB1B842121003BF37F /* PolarionLive2015Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01673EE11B842121003BF37F /* PolarionLive2015 */ = {
+			isa = PBXGroup;
+			children = (
+				01673EE61B842121003BF37F /* AppDelegate.h */,
+				01673EE71B842121003BF37F /* AppDelegate.m */,
+				01673EEC1B842121003BF37F /* ViewController.h */,
+				01673EED1B842121003BF37F /* ViewController.m */,
+				01673EEF1B842121003BF37F /* Main.storyboard */,
+				01673EF21B842121003BF37F /* Images.xcassets */,
+				01673EF41B842121003BF37F /* LaunchScreen.xib */,
+				01673EE91B842121003BF37F /* PolarionLive2015.xcdatamodeld */,
+				01673EE21B842121003BF37F /* Supporting Files */,
+			);
+			path = PolarionLive2015;
+			sourceTree = "<group>";
+		};
+		01673EE21B842121003BF37F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01673EE31B842121003BF37F /* Info.plist */,
+				01673EE41B842121003BF37F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01673EFE1B842121003BF37F /* PolarionLive2015Tests */ = {
+			isa = PBXGroup;
+			children = (
+				01673F011B842121003BF37F /* PolarionLive2015Tests.m */,
+				01673EFF1B842121003BF37F /* Supporting Files */,
+			);
+			path = PolarionLive2015Tests;
+			sourceTree = "<group>";
+		};
+		01673EFF1B842121003BF37F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01673F001B842121003BF37F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01673EDE1B842121003BF37F /* PolarionLive2015 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01673F051B842121003BF37F /* Build configuration list for PBXNativeTarget "PolarionLive2015" */;
+			buildPhases = (
+				01673EDB1B842121003BF37F /* Sources */,
+				01673EDC1B842121003BF37F /* Frameworks */,
+				01673EDD1B842121003BF37F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PolarionLive2015;
+			productName = PolarionLive2015;
+			productReference = 01673EDF1B842121003BF37F /* PolarionLive2015.app */;
+			productType = "com.apple.product-type.application";
+		};
+		01673EFA1B842121003BF37F /* PolarionLive2015Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01673F081B842121003BF37F /* Build configuration list for PBXNativeTarget "PolarionLive2015Tests" */;
+			buildPhases = (
+				01673EF71B842121003BF37F /* Sources */,
+				01673EF81B842121003BF37F /* Frameworks */,
+				01673EF91B842121003BF37F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01673EFD1B842121003BF37F /* PBXTargetDependency */,
+			);
+			name = PolarionLive2015Tests;
+			productName = PolarionLive2015Tests;
+			productReference = 01673EFB1B842121003BF37F /* PolarionLive2015Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01673ED71B842121003BF37F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Scott Richards";
+				TargetAttributes = {
+					01673EDE1B842121003BF37F = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					01673EFA1B842121003BF37F = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 01673EDE1B842121003BF37F;
+					};
+				};
+			};
+			buildConfigurationList = 01673EDA1B842121003BF37F /* Build configuration list for PBXProject "PolarionLive2015" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01673ED61B842121003BF37F;
+			productRefGroup = 01673EE01B842121003BF37F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01673EDE1B842121003BF37F /* PolarionLive2015 */,
+				01673EFA1B842121003BF37F /* PolarionLive2015Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01673EDD1B842121003BF37F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01673EF11B842121003BF37F /* Main.storyboard in Resources */,
+				01673EF61B842121003BF37F /* LaunchScreen.xib in Resources */,
+				01673EF31B842121003BF37F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01673EF91B842121003BF37F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01673EDB1B842121003BF37F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01673EE81B842121003BF37F /* AppDelegate.m in Sources */,
+				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
+				01673EEE1B842121003BF37F /* ViewController.m in Sources */,
+				01673EE51B842121003BF37F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01673EF71B842121003BF37F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01673F021B842121003BF37F /* PolarionLive2015Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01673EFD1B842121003BF37F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01673EDE1B842121003BF37F /* PolarionLive2015 */;
+			targetProxy = 01673EFC1B842121003BF37F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		01673EEF1B842121003BF37F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01673EF01B842121003BF37F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01673EF41B842121003BF37F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01673EF51B842121003BF37F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01673F031B842121003BF37F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		01673F041B842121003BF37F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		01673F061B842121003BF37F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PolarionLive2015/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01673F071B842121003BF37F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PolarionLive2015/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		01673F091B842121003BF37F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PolarionLive2015Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolarionLive2015.app/PolarionLive2015";
+			};
+			name = Debug;
+		};
+		01673F0A1B842121003BF37F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PolarionLive2015Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolarionLive2015.app/PolarionLive2015";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01673EDA1B842121003BF37F /* Build configuration list for PBXProject "PolarionLive2015" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01673F031B842121003BF37F /* Debug */,
+				01673F041B842121003BF37F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01673F051B842121003BF37F /* Build configuration list for PBXNativeTarget "PolarionLive2015" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01673F061B842121003BF37F /* Debug */,
+				01673F071B842121003BF37F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01673F081B842121003BF37F /* Build configuration list for PBXNativeTarget "PolarionLive2015Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01673F091B842121003BF37F /* Debug */,
+				01673F0A1B842121003BF37F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		01673EE91B842121003BF37F /* PolarionLive2015.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				01673EEA1B842121003BF37F /* PolarionLive2015.xcdatamodel */,
+			);
+			currentVersion = 01673EEA1B842121003BF37F /* PolarionLive2015.xcdatamodel */;
+			path = PolarionLive2015.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 01673ED71B842121003BF37F /* Project object */;
+}

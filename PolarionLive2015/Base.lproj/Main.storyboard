@@ -22,7 +22,63 @@
                     <tabBarItem key="tabBarItem" title="Partners" image="Handshake50" id="8m2-BE-ecA"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="349" y="1648"/>
+            <point key="canvasLocation" x="541" y="1477"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="2ig-q1-PoO">
+            <objects>
+                <viewController id="RWd-0Z-ZyA" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wVt-MS-G3p"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vzi-mR-I8p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j6w-Nh-hW9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-tG-kTY">
+                                <rect key="frame" x="43" y="48" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1J-Sh-cxH">
+                                <rect key="frame" x="43" y="92" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FWI-Pg-b3v">
+                                <rect key="frame" x="137" y="44" width="237" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPE-fL-RK1">
+                                <rect key="frame" x="137" y="92" width="237" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yh-1y-niz">
+                                <rect key="frame" x="16" y="292" width="168" height="43"/>
+                                <state key="normal" title="Log In" backgroundImage="login-button-small.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookLogin:" destination="RWd-0Z-ZyA" eventType="touchUpInside" id="o47-FX-q19"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="v7N-Bh-R0p"/>
+                    <connections>
+                        <outlet property="password" destination="uPE-fL-RK1" id="aGr-gK-wfd"/>
+                        <outlet property="username" destination="FWI-Pg-b3v" id="1qk-CB-zar"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIV-3t-EGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="1856"/>
         </scene>
         <!--Polarion Live-->
         <scene sceneID="R2U-8y-hol">
@@ -138,6 +194,7 @@
                         <segue destination="9bR-Ed-Plt" kind="relationship" relationship="viewControllers" id="PGY-oc-cts"/>
                         <segue destination="wNA-vU-ox3" kind="relationship" relationship="viewControllers" id="hyU-w6-XcF"/>
                         <segue destination="hmC-cd-B1L" kind="relationship" relationship="viewControllers" id="XKW-Ur-oO2"/>
+                        <segue destination="RWd-0Z-ZyA" kind="relationship" relationship="viewControllers" id="es0-7Y-jGH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7j-pw-d5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,6 +226,7 @@
         <image name="Polarion-Logo-BB" width="62" height="72"/>
         <image name="Polarion-Logo-Gray25" width="25" height="25"/>
         <image name="clock" width="25" height="25"/>
-        <image name="coffee" width="320" height="138"/>
+        <image name="coffee" width="151" height="43"/>
+        <image name="login-button-small.png" width="151" height="43"/>
     </resources>
 </document>

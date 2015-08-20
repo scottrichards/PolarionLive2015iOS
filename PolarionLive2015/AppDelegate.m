@@ -29,6 +29,7 @@
   
   [Parse setApplicationId:@"ytC7lrxAdRDvguofSHtRLyPe8DdiO5MdC4VdMDoz" clientKey:@"GIX1MZRR1rPqQGEOTEKwyNa6FuHWLhuiy3HyrVPt"];
   
+  [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
   [FBSDKLoginButton class];
   // ****************************************************************************
   // Your Facebook application id is configured in Info.plist.

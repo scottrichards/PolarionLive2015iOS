@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIView *loggedInView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
@@ -36,10 +38,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  [self checkForFaceboookLogin];
+  [self checkForLogin];
 }
 
-- (void)checkForFaceboookLogin
+- (void)checkForLogin
 {
   PFUser *currentUser = [PFUser currentUser];
   _fbToken = [FBSDKAccessToken currentAccessToken];
@@ -75,13 +77,32 @@
   [_loggedInView setHidden:YES];
 }
 
+- (IBAction)onLogin:(id)sender {
+  [PFUser logInWithUsernameInBackground:_usernameField.text password:_passwordField.text
+      block:^(PFUser *user, NSError *error) {
+        if (user) {
+          NSLog(@"User %@ logged in",user.username);
+          [self checkForLogin];
+        } else {
+          NSLog(@"LOG In FAILURE:");
+          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                          message:@"Login failed, make sure your username and password are correct"
+                                                         delegate:self
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+          [alert show];
+        }
+      }];
+
+}
+
 - (IBAction)facebookLogin:(id)sender {
   [PFFacebookUtils logInInBackgroundWithReadPermissions:@[@"email"] block:^(PFUser *user, NSError *error) {
     if (error) {
       NSLog(@"Error: %ld",error.code);
     } else {
       NSLog(@"Logged in: ");
-      [self checkForFaceboookLogin];
+      [self checkForLogin];
     }
   }];
   
@@ -103,6 +124,13 @@
 //  }];
   
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+  [textField resignFirstResponder];
+  return YES;
+}
+
 
 /*
 #pragma mark - Navigation

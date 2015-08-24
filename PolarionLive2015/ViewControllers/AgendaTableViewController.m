@@ -9,9 +9,14 @@
 #import "AgendaTableViewController.h"
 #import "AgendaTableViewCell.h"
 #import <Parse/Parse.h>
+#import "SessionInfo.h"
+#import "SessionDetailsViewController.h"
+#import "DateObject.h"
 
 @interface AgendaTableViewController ()
-@property (strong, nonatomic) NSArray *agendaItems;
+@property (strong, nonatomic) NSMutableArray *dateArray;       // Array of DateObjects
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSDateFormatter *timeFormatter;
 @end
 
 @implementation AgendaTableViewController
@@ -33,7 +38,7 @@
   [query orderByAscending:@"start"];
   [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
     if (!error) {
-      _agendaItems = objects;
+      [self orderByDate:objects];
       [self.tableView reloadData];
     } else {
       // Log details of the failure
@@ -41,6 +46,31 @@
     }
   }];
   
+}
+
+- (void)orderByDate:(NSArray *)objects
+{
+  NSString *lastDate = @"";
+  DateObject *currentDateObject;
+  if (self.dateArray == nil) {
+    self.dateArray = [[NSMutableArray alloc] init];
+  } else {
+    [self.dateArray removeAllObjects];
+  }
+  for (SessionInfo *session in objects) {
+    
+    NSString *currentDate = [self formatDateWithObject:session];
+    if (![lastDate isEqualToString:currentDate]) {
+      currentDateObject = [[DateObject alloc] initWithDate:session[@"start"] andString:currentDate];
+      [self.dateArray addObject:currentDateObject];
+      lastDate = currentDate;
+    }
+    NSLog(@"Item: %@ Date: %@ Time: %@",session[@"session"],[self formatDateWithObject:session], [self formatTimeWithObject:session]);
+    session[@"displayTime"] = [self formatTimeWithObject:session];
+    //       [self.sessionArray addObject:session];
+    [currentDateObject addSession:session];
+  }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,27 +81,97 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.dateArray count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_agendaItems count];
+  DateObject *dateObject = self.dateArray[section];
+  return [dateObject.sessions count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  // The header for the section is the region name -- get this from the region at the section index.
+  DateObject *dateObject = self.dateArray[section];
+  return dateObject.dateString;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   AgendaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-  if (indexPath.row < [_agendaItems count]) {
-    PFObject *agendaObject = _agendaItems[indexPath.row];
-    cell.sessionName.text = agendaObject[@"session"];
-    cell.location.text = agendaObject[@"location"];
-    cell.timeLabel.text = agendaObject[@"displayTime"];
+  if (indexPath.section < [_dateArray count]) {
+    DateObject *dateObject = _dateArray[indexPath.section];
+    if (dateObject && indexPath.row < [dateObject.sessions count]) {
+      SessionInfo *sessionInfo = [dateObject.sessions objectAtIndex:indexPath.row];
+//      PFObject *agendaObject = _agendaItems[indexPath.row];
+      cell.sessionName.text = sessionInfo[@"session"];
+      cell.location.text = sessionInfo[@"location"];
+      cell.timeLabel.text = sessionInfo[@"displayTime"];
+      NSString *iconImage = sessionInfo[@"icon"];
+      if (iconImage)
+        [cell.iconImageView setImage:[UIImage imageNamed:iconImage]];
+      else
+        [cell.iconImageView setImage:nil];
+    }
   }
     
   return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (indexPath.section < [_dateArray count]) {
+    DateObject *dateObject = _dateArray[indexPath.section];
+    if (dateObject && indexPath.row < [dateObject.sessions count]) {
+        SessionInfo *sessionInfo = [dateObject.sessions objectAtIndex:indexPath.row];
+        NSNumber *customType = sessionInfo[@"customType"];
+        SessionDetailsViewController *sessionDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsController"];
+        if (sessionDetailsVC) {
+          sessionDetailsVC.sessionInfo = sessionInfo;
+          [self.navigationController pushViewController:sessionDetailsVC animated:YES];
+        }
+    }
+  }
+}
+
+
+- (NSString *)formatDateWithObject:(PFObject *)object
+{
+  if (self.dateFormatter == nil) {
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    NSString *formatString = [NSDateFormatter dateFormatFromTemplate:@"EEEEdMMMM" options:0
+                                                              locale:[NSLocale currentLocale]];
+    [self.dateFormatter setDateFormat:formatString];
+    
+  }
+  
+  NSDate *date = object[@"start"];
+  
+  NSString *formattedDateString = [NSString stringWithFormat:@"%@",[self.dateFormatter stringFromDate:date]];
+  NSLog(@"formattedDateString: %@", formattedDateString);
+  
+  return formattedDateString;
+}
+
+- (NSString *)formatTimeWithObject:(PFObject *)object
+{
+  
+  if (self.timeFormatter == nil) {
+    self.timeFormatter = [[NSDateFormatter alloc] init];
+    [self.timeFormatter setDateFormat:@"H:mm"];
+    [self.timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+  }
+  NSDate *date = object[@"start"];
+  NSString *formattedTimeString;
+  if (object[@"end"] == nil) {
+    formattedTimeString = [self.timeFormatter stringFromDate:date];
+  } else {
+    formattedTimeString = [NSString stringWithFormat:@"%@-%@",[self.timeFormatter stringFromDate:date],[self.timeFormatter stringFromDate:object[@"end"]]];
+  }
+  NSLog(@"formattedTimeString: %@", formattedTimeString);
+  
+  return formattedTimeString;
+}
 
 /*
 // Override to support conditional editing of the table view.

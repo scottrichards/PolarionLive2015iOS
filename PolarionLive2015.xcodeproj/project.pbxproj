@@ -41,6 +41,9 @@
 		01673FB81B855DDD003BF37F /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 01673FB41B855DDD003BF37F /* login-button-small.png */; };
 		01673FB91B855DDD003BF37F /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01673FB51B855DDD003BF37F /* login-button-small@2x.png */; };
 		01673FBC1B86464A003BF37F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FBB1B864649003BF37F /* SignUpViewController.m */; };
+		01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */; };
+		01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FC11B868C3E003BF37F /* PartnerViewController.m */; };
+		016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740471B8ACB2E003BF37F /* AMRatingControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,12 @@
 		01673FB51B855DDD003BF37F /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
 		01673FBA1B864649003BF37F /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		01673FBB1B864649003BF37F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		01673FBD1B865D22003BF37F /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
+		01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
+		01673FC01B868C3E003BF37F /* PartnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerViewController.h; sourceTree = "<group>"; };
+		01673FC11B868C3E003BF37F /* PartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerViewController.m; sourceTree = "<group>"; };
+		016740461B8ACB2E003BF37F /* AMRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRatingControl.h; sourceTree = "<group>"; };
+		016740471B8ACB2E003BF37F /* AMRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMRatingControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +167,7 @@
 		01673EE11B842121003BF37F /* PolarionLive2015 */ = {
 			isa = PBXGroup;
 			children = (
+				016740451B8ACAEF003BF37F /* Controls */,
 				01673EE61B842121003BF37F /* AppDelegate.h */,
 				01673EE71B842121003BF37F /* AppDelegate.m */,
 				01673EF21B842121003BF37F /* Images.xcassets */,
@@ -168,6 +178,7 @@
 				01673FB11B855DDD003BF37F /* Resources */,
 				01673EE21B842121003BF37F /* Supporting Files */,
 				01673FAA1B854646003BF37F /* TableViewCells */,
+				01673FFB1B87B535003BF37F /* Utility */,
 				01673EEC1B842121003BF37F /* ViewController.h */,
 				01673EED1B842121003BF37F /* ViewController.m */,
 				01673F6B1B851327003BF37F /* ViewControllers */,
@@ -254,6 +265,10 @@
 				01673FAF1B855D4D003BF37F /* LoginViewController.m */,
 				01673FBA1B864649003BF37F /* SignUpViewController.h */,
 				01673FBB1B864649003BF37F /* SignUpViewController.m */,
+				01673FBD1B865D22003BF37F /* SessionDetailsViewController.h */,
+				01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */,
+				01673FC01B868C3E003BF37F /* PartnerViewController.h */,
+				01673FC11B868C3E003BF37F /* PartnerViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -276,6 +291,22 @@
 				01673FB51B855DDD003BF37F /* login-button-small@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		01673FFB1B87B535003BF37F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		016740451B8ACAEF003BF37F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				016740461B8ACB2E003BF37F /* AMRatingControl.h */,
+				016740471B8ACB2E003BF37F /* AMRatingControl.m */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +415,7 @@
 			files = (
 				01673EE81B842121003BF37F /* AppDelegate.m in Sources */,
 				01673F6A1B851035003BF37F /* SessionRating.m in Sources */,
+				01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */,
 				01673FBC1B86464A003BF37F /* SignUpViewController.m in Sources */,
 				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
 				01673F691B851035003BF37F /* SessionInfo.m in Sources */,
@@ -393,7 +425,9 @@
 				01673EE51B842121003BF37F /* main.m in Sources */,
 				01673F6E1B85136A003BF37F /* HomeViewController.m in Sources */,
 				01673FB01B855D4D003BF37F /* LoginViewController.m in Sources */,
+				016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */,
 				01673F711B8517A9003BF37F /* AgendaTableViewController.m in Sources */,
+				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +560,7 @@
 				INFOPLIST_FILE = PolarionLive2015/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -540,6 +575,7 @@
 				INFOPLIST_FILE = PolarionLive2015/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

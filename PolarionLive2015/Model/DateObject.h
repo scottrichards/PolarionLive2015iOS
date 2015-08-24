@@ -13,7 +13,6 @@
 @interface DateObject : NSObject
 @property (strong, nonatomic) NSString *dateString;
 @property (strong, nonatomic) NSDate *date;
-@property (strong, nonatomic) PFObject *object;
 @property (strong, nonatomic) NSMutableArray *sessions;
 
 - (id)initWithDate:(NSDate *)date andString:(NSString *)displayName;

@@ -13,7 +13,6 @@
 		01673EEE1B842121003BF37F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673EED1B842121003BF37F /* ViewController.m */; };
 		01673EF11B842121003BF37F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01673EEF1B842121003BF37F /* Main.storyboard */; };
 		01673EF31B842121003BF37F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01673EF21B842121003BF37F /* Images.xcassets */; };
-		01673EF61B842121003BF37F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01673EF41B842121003BF37F /* LaunchScreen.xib */; };
 		01673F021B842121003BF37F /* PolarionLive2015Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673F011B842121003BF37F /* PolarionLive2015Tests.m */; };
 		01673F3A1B85057C003BF37F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01673F381B85057C003BF37F /* Parse.framework */; };
 		01673F441B8505E0003BF37F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01673F3B1B8505E0003BF37F /* AudioToolbox.framework */; };
@@ -44,6 +43,7 @@
 		01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */; };
 		01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FC11B868C3E003BF37F /* PartnerViewController.m */; };
 		016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740471B8ACB2E003BF37F /* AMRatingControl.m */; };
+		0167404B1B8B7BD5003BF37F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016740491B8B7BD5003BF37F /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		01673EED1B842121003BF37F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		01673EF01B842121003BF37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01673EF21B842121003BF37F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		01673EF51B842121003BF37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		01673EFB1B842121003BF37F /* PolarionLive2015Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolarionLive2015Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01673F001B842121003BF37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01673F011B842121003BF37F /* PolarionLive2015Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PolarionLive2015Tests.m; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		01673FC11B868C3E003BF37F /* PartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerViewController.m; sourceTree = "<group>"; };
 		016740461B8ACB2E003BF37F /* AMRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRatingControl.h; sourceTree = "<group>"; };
 		016740471B8ACB2E003BF37F /* AMRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMRatingControl.m; sourceTree = "<group>"; };
+		0167404A1B8B7BD5003BF37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 				01673EE61B842121003BF37F /* AppDelegate.h */,
 				01673EE71B842121003BF37F /* AppDelegate.m */,
 				01673EF21B842121003BF37F /* Images.xcassets */,
-				01673EF41B842121003BF37F /* LaunchScreen.xib */,
+				016740491B8B7BD5003BF37F /* LaunchScreen.xib */,
 				01673EEF1B842121003BF37F /* Main.storyboard */,
 				01673F611B851035003BF37F /* Model */,
 				01673EE91B842121003BF37F /* PolarionLive2015.xcdatamodeld */,
@@ -392,8 +392,8 @@
 				01673FB71B855DDD003BF37F /* login-button-small-pressed@2x.png in Resources */,
 				01673FB81B855DDD003BF37F /* login-button-small.png in Resources */,
 				01673FB61B855DDD003BF37F /* login-button-small-pressed.png in Resources */,
+				0167404B1B8B7BD5003BF37F /* LaunchScreen.xib in Resources */,
 				01673EF11B842121003BF37F /* Main.storyboard in Resources */,
-				01673EF61B842121003BF37F /* LaunchScreen.xib in Resources */,
 				01673FB91B855DDD003BF37F /* login-button-small@2x.png in Resources */,
 				01673EF31B842121003BF37F /* Images.xcassets in Resources */,
 			);
@@ -458,10 +458,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		01673EF41B842121003BF37F /* LaunchScreen.xib */ = {
+		016740491B8B7BD5003BF37F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				01673EF51B842121003BF37F /* Base */,
+				0167404A1B8B7BD5003BF37F /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

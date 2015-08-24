@@ -8,6 +8,7 @@
 
 #import "SessionDetailsViewController.h"
 #import "AMRatingControl.h"
+#import "SessionRating.h"
 
 #define CONTENT_RATING_X 140
 #define CONTENT_RATING_Y 320
@@ -33,16 +34,17 @@
 @implementation SessionDetailsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.time.text = self.sessionInfo[@"displayTime"];
-    self.sessionName.text = self.sessionInfo[@"session"];
-    self.descriptionLabel.text = self.sessionInfo[@"description"];
-    self.presenters.text = self.sessionInfo[@"presenter"];
-    self.location.text = self.sessionInfo[@"location"];
-    if ([self.presenters.text length] == 0) // if we don't have any presenter's hide the label
-    {
-
-    }
+  [super viewDidLoad];
+  self.time.text = self.sessionInfo[@"displayTime"];
+  self.sessionName.text = self.sessionInfo[@"session"];
+  self.descriptionLabel.text = self.sessionInfo[@"description"];
+  self.presenters.text = self.sessionInfo[@"presenter"];
+  self.location.text = self.sessionInfo[@"location"];
+  if ([self.presenters.text length] == 0) // if we don't have any presenter's hide the label
+  {
+    
+  }
+  [self addRatingControl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +58,8 @@
   if ([self.sessionInfo[@"rateable"] boolValue] == YES) {
     [self.rateButton setHidden:NO];
     [self.ratingView setHidden:NO];
+    self.presenterRating = -1;
+    self.contentRating = -1;
     self.presenterRatingControl = [[AMRatingControl alloc] initWithLocation:CGPointMake(CONTENT_RATING_X, CONTENT_RATING_Y)
                                                                  emptyColor:[UIColor blackColor]
                                                                  solidColor:[UIColor orangeColor]
@@ -71,14 +75,14 @@
     self.presenterRatingControl.editingChangedBlock = ^(NSUInteger rating)
     {
       NSLog(@"Content Rating: %lu",(unsigned long)rating);
-      self.presenterRating = rating;
+      _presenterRating = (int)rating;
     };
     
     // Define block to handle events
     self.contentRatingControl.editingChangedBlock = ^(NSUInteger rating)
     {
       NSLog(@"Content Rating: %lu",(unsigned long)rating);
-      self.contentRating = rating;
+      _contentRating = (int)rating;
     };
     
     //    self.logInfo.rating = 0;
@@ -91,6 +95,18 @@
   } else {
     [self.rateButton setHidden:YES];
     [self.ratingView setHidden:YES];
+  }
+}
+
+- (IBAction)onRate:(id)sender {
+  SessionRating *sessionRating = [SessionRating object];
+  if (self.presenterRating >= 0) {
+    sessionRating[@"presenterRating"] = [NSNumber numberWithInt:self.presenterRating];
+    sessionRating[@"contentRating"] = [NSNumber numberWithInt:self.contentRating];
+    sessionRating[@"session"] = self.sessionInfo;
+    sessionRating[@"user"] = [PFUser currentUser];
+    [sessionRating saveInBackground];
+    [self.navigationController popViewControllerAnimated:YES];
   }
 }
 

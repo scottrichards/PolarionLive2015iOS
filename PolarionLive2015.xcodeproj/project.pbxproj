@@ -44,6 +44,11 @@
 		01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FC11B868C3E003BF37F /* PartnerViewController.m */; };
 		016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740471B8ACB2E003BF37F /* AMRatingControl.m */; };
 		0167404B1B8B7BD5003BF37F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016740491B8B7BD5003BF37F /* LaunchScreen.xib */; };
+		016740531B8B8DB2003BF37F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167404E1B8B8DB2003BF37F /* RECommonFunctions.m */; };
+		016740541B8B8DB2003BF37F /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740501B8B8DB2003BF37F /* RESideMenu.m */; };
+		016740551B8B8DB2003BF37F /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740521B8B8DB2003BF37F /* UIViewController+RESideMenu.m */; };
+		016740581B8B8EB7003BF37F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740571B8B8EB7003BF37F /* RootViewController.m */; };
+		0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +116,16 @@
 		016740461B8ACB2E003BF37F /* AMRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRatingControl.h; sourceTree = "<group>"; };
 		016740471B8ACB2E003BF37F /* AMRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMRatingControl.m; sourceTree = "<group>"; };
 		0167404A1B8B7BD5003BF37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		0167404D1B8B8DB2003BF37F /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		0167404E1B8B8DB2003BF37F /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		0167404F1B8B8DB2003BF37F /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		016740501B8B8DB2003BF37F /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		016740511B8B8DB2003BF37F /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		016740521B8B8DB2003BF37F /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		016740561B8B8EB7003BF37F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		016740571B8B8EB7003BF37F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		016740591B8B8F34003BF37F /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
+		0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,14 +182,15 @@
 		01673EE11B842121003BF37F /* PolarionLive2015 */ = {
 			isa = PBXGroup;
 			children = (
-				016740451B8ACAEF003BF37F /* Controls */,
 				01673EE61B842121003BF37F /* AppDelegate.h */,
 				01673EE71B842121003BF37F /* AppDelegate.m */,
+				016740451B8ACAEF003BF37F /* Controls */,
 				01673EF21B842121003BF37F /* Images.xcassets */,
 				016740491B8B7BD5003BF37F /* LaunchScreen.xib */,
 				01673EEF1B842121003BF37F /* Main.storyboard */,
 				01673F611B851035003BF37F /* Model */,
 				01673EE91B842121003BF37F /* PolarionLive2015.xcdatamodeld */,
+				0167404C1B8B8D71003BF37F /* RESideMenu */,
 				01673FB11B855DDD003BF37F /* Resources */,
 				01673EE21B842121003BF37F /* Supporting Files */,
 				01673FAA1B854646003BF37F /* TableViewCells */,
@@ -269,6 +285,10 @@
 				01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */,
 				01673FC01B868C3E003BF37F /* PartnerViewController.h */,
 				01673FC11B868C3E003BF37F /* PartnerViewController.m */,
+				016740561B8B8EB7003BF37F /* RootViewController.h */,
+				016740571B8B8EB7003BF37F /* RootViewController.m */,
+				016740591B8B8F34003BF37F /* LeftMenuViewController.h */,
+				0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -307,6 +327,19 @@
 				016740471B8ACB2E003BF37F /* AMRatingControl.m */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		0167404C1B8B8D71003BF37F /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0167404D1B8B8DB2003BF37F /* RECommonFunctions.h */,
+				0167404E1B8B8DB2003BF37F /* RECommonFunctions.m */,
+				0167404F1B8B8DB2003BF37F /* RESideMenu.h */,
+				016740501B8B8DB2003BF37F /* RESideMenu.m */,
+				016740511B8B8DB2003BF37F /* UIViewController+RESideMenu.h */,
+				016740521B8B8DB2003BF37F /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,13 +447,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				01673EE81B842121003BF37F /* AppDelegate.m in Sources */,
+				016740581B8B8EB7003BF37F /* RootViewController.m in Sources */,
 				01673F6A1B851035003BF37F /* SessionRating.m in Sources */,
 				01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */,
 				01673FBC1B86464A003BF37F /* SignUpViewController.m in Sources */,
 				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
 				01673F691B851035003BF37F /* SessionInfo.m in Sources */,
 				01673EEE1B842121003BF37F /* ViewController.m in Sources */,
+				016740531B8B8DB2003BF37F /* RECommonFunctions.m in Sources */,
 				01673FAD1B854686003BF37F /* AgendaTableViewCell.m in Sources */,
+				016740541B8B8DB2003BF37F /* RESideMenu.m in Sources */,
 				01673F681B851035003BF37F /* DateObject.m in Sources */,
 				01673EE51B842121003BF37F /* main.m in Sources */,
 				01673F6E1B85136A003BF37F /* HomeViewController.m in Sources */,
@@ -428,6 +464,8 @@
 				016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */,
 				01673F711B8517A9003BF37F /* AgendaTableViewController.m in Sources */,
 				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
+				0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */,
+				016740551B8B8DB2003BF37F /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="72b-0H-arE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ayo-dc-wW3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--Login-->
         <scene sceneID="2ig-q1-PoO">
             <objects>
-                <viewController id="RWd-0Z-ZyA" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="RWd-0Z-ZyA" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wVt-MS-G3p"/>
                         <viewControllerLayoutGuide type="bottom" id="Vzi-mR-I8p"/>
@@ -134,6 +134,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="3WL-0c-yJ8">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="2lP-XT-SE3"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="GBU-Qg-YVr">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="RWd-0Z-ZyA" id="CYm-0e-hUj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="loggedInView" destination="Puz-Qx-ciL" id="5WK-WI-nGh"/>
@@ -258,12 +263,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWB-Fr-v9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072" y="2179"/>
+            <point key="canvasLocation" x="2884" y="2179"/>
         </scene>
-        <!--Polarion Live-->
+        <!--Home View Controller-->
         <scene sceneID="R2U-8y-hol">
             <objects>
-                <viewController id="9bR-Ed-Plt" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9bR-Ed-Plt" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YJL-lt-N4A"/>
                         <viewControllerLayoutGuide type="bottom" id="wsu-dW-R9E"/>
@@ -272,8 +277,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pfs-Y8-fGa">
-                                <rect key="frame" x="140" y="35" width="320" height="500"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfs-Y8-fGa">
+                                <rect key="frame" x="140" y="80" width="320" height="500"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Polarion-Logo-BB" translatesAutoresizingMaskIntoConstraints="NO" id="Jwb-yP-Kgg">
                                         <rect key="frame" x="126" y="8" width="62" height="72"/>
@@ -302,26 +307,32 @@
                                 <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="hGE-sc-yUJ"/>
-                                    <constraint firstAttribute="height" constant="310" id="rpd-aB-a5k"/>
+                                    <constraint firstAttribute="height" constant="500" id="rpd-aB-a5k"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="pfs-Y8-fGa" secondAttribute="centerX" id="Lrc-Mw-6eN"/>
-                            <constraint firstItem="pfs-Y8-fGa" firstAttribute="top" secondItem="YJL-lt-N4A" secondAttribute="bottom" constant="15" id="zTF-lK-wad"/>
+                            <constraint firstItem="pfs-Y8-fGa" firstAttribute="top" secondItem="YJL-lt-N4A" secondAttribute="bottom" constant="16" id="zTF-lK-wad"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Polarion Live" image="Polarion-Logo-Gray25" id="0wf-aw-OEU"/>
+                    <navigationItem key="navigationItem" id="btP-ME-jX2">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Qd0-CN-DLE">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="9bR-Ed-Plt" id="0WA-AY-jPZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epp-tb-WIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="477" y="156"/>
+            <point key="canvasLocation" x="1289" y="156"/>
         </scene>
-        <!--Agenda Table View Controller-->
+        <!--Agenda-->
         <scene sceneID="PrV-tf-FZ0">
             <objects>
-                <tableViewController id="rAi-7f-JJZ" customClass="AgendaTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="agendaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rAi-7f-JJZ" customClass="AgendaTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" id="Clu-py-eaq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,11 +386,17 @@
                             <outlet property="delegate" destination="rAi-7f-JJZ" id="e4C-Go-z3A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KCQ-ZC-4zK"/>
+                    <navigationItem key="navigationItem" title="Agenda" id="KCQ-ZC-4zK">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Qhb-ME-RAr">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="rAi-7f-JJZ" id="5O4-gv-Eeh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9RF-nF-Ku6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298" y="807"/>
+            <point key="canvasLocation" x="1281" y="855"/>
         </scene>
         <!--Session Details View Controller-->
         <scene sceneID="diV-Ij-b4c">
@@ -484,28 +501,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q1-as-zCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2016" y="807"/>
+            <point key="canvasLocation" x="2040" y="855"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Sq5-oT-46A">
+        <!--Root View Controller-->
+        <scene sceneID="C9M-V9-XmG">
             <objects>
-                <tabBarController id="72b-0H-arE" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="D42-Hi-SL1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="9bR-Ed-Plt" kind="relationship" relationship="viewControllers" id="PGY-oc-cts"/>
-                        <segue destination="wNA-vU-ox3" kind="relationship" relationship="viewControllers" id="hyU-w6-XcF"/>
-                        <segue destination="Z56-8J-N3t" kind="relationship" relationship="viewControllers" id="wAE-u2-y9f"/>
-                        <segue destination="fWG-Vi-OHb" kind="relationship" relationship="viewControllers" id="es0-7Y-jGH"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C7j-pw-d5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="rootController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ayo-dc-wW3" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xPz-f3-Es4"/>
+                        <viewControllerLayoutGuide type="bottom" id="BTI-F8-5OP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aHd-k7-4ZC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cym-Yx-lWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343" y="487"/>
+            <point key="canvasLocation" x="-329" y="508"/>
+        </scene>
+        <!--Left Menu View Controller-->
+        <scene sceneID="bQq-Wg-LE0">
+            <objects>
+                <viewController restorationIdentifier="leftMenuViewController" storyboardIdentifier="leftMenuViewController" id="GZ3-1C-EJo" customClass="LeftMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eFN-LK-Qua"/>
+                        <viewControllerLayoutGuide type="bottom" id="kmA-Ik-2Ng"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qTC-or-4JB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ira-W6-tq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-318" y="1185"/>
         </scene>
         <!--Agenda-->
         <scene sceneID="qfm-3e-pP5">
@@ -529,16 +561,16 @@
         <!--Partners-->
         <scene sceneID="lYW-bL-RJN">
             <objects>
-                <viewController id="Z56-8J-N3t" customClass="PartnerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="partnerViewController" id="Z56-8J-N3t" customClass="PartnerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QsB-ZX-aSR"/>
                         <viewControllerLayoutGuide type="bottom" id="dfa-QE-tId"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LmA-mP-YBg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbZ-c2-yMY">
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CbZ-c2-yMY">
                                 <rect key="frame" x="0.0" y="20" width="600" height="574"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -552,14 +584,20 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Partners" image="Handshake50" id="IMM-jx-h8z"/>
+                    <navigationItem key="navigationItem" title="Partners" id="s1J-tF-bWr">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="B9Y-nr-vOe">
+                            <connections>
+                                <action selector="presentLeftMenuViewController:" destination="Z56-8J-N3t" id="vIw-Nk-9Ad"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webview" destination="CbZ-c2-yMY" id="b53-Tg-9bk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJZ-cv-3ot" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="1723"/>
+            <point key="canvasLocation" x="1289" y="1591"/>
         </scene>
         <!--Login-->
         <scene sceneID="wrO-cm-wnp">
@@ -580,6 +618,44 @@
             </objects>
             <point key="canvasLocation" x="53" y="2367"/>
         </scene>
+        <!--Polarion Live-->
+        <scene sceneID="va7-7h-DNd">
+            <objects>
+                <navigationController storyboardIdentifier="contentViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WiN-pf-v5s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Polarion Live" image="Polarion-Logo-Gray25" id="0wf-aw-OEU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dDL-lE-x2W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9bR-Ed-Plt" kind="relationship" relationship="rootViewController" id="KZC-3M-9K3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wgb-Ao-UBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="477" y="156"/>
+        </scene>
+        <!--Partners-->
+        <scene sceneID="zI4-gt-xM6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uOK-gv-Mla" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Partners" image="Handshake50" id="IMM-jx-h8z"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hzi-gP-M6o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z56-8J-N3t" kind="relationship" relationship="rootViewController" id="tpl-KR-Djk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n11-Yi-w55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469" y="1591"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Handshake50" width="24" height="16"/>
@@ -588,8 +664,6 @@
         <image name="SplashScreen" width="264" height="156"/>
         <image name="clock" width="25" height="25"/>
         <image name="login-button-small.png" width="151" height="43"/>
+        <image name="menu" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="es0-7Y-jGH"/>
-    </inferredMetricsTieBreakers>
 </document>

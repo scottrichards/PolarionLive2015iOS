@@ -32,8 +32,7 @@
   self.contentViewShadowOpacity = 0.6;
   self.contentViewShadowRadius = 12;
   self.contentViewShadowEnabled = YES;
-//  self.contentViewFadeOutAlpha = 0.2F;
-  self.parallaxEnabled = NO;
+//  self.parallaxEnabled = NO;
   self.scaleContentView = NO;
   
   self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentViewController"];

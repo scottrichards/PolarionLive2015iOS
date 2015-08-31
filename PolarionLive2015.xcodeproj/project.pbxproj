@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01154F511B94A89600A2D862 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01154F501B94A89600A2D862 /* SocialViewController.m */; };
+		01154F531B94ADD500A2D862 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01154F521B94ADD500A2D862 /* Social.framework */; };
+		014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014F315D1B8CF5D80062FC24 /* MapViewController.m */; };
+		014F31601B8CFBAB0062FC24 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014F315F1B8CFBAB0062FC24 /* MapKit.framework */; };
+		014F31631B8CFDB30062FC24 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 014F31621B8CFDB30062FC24 /* PlaceAnnotation.m */; };
 		01673EE51B842121003BF37F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673EE41B842121003BF37F /* main.m */; };
 		01673EE81B842121003BF37F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673EE71B842121003BF37F /* AppDelegate.m */; };
 		01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01673EE91B842121003BF37F /* PolarionLive2015.xcdatamodeld */; };
@@ -62,6 +67,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01154F4F1B94A89600A2D862 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
+		01154F501B94A89600A2D862 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
+		01154F521B94ADD500A2D862 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		014F315C1B8CF5D80062FC24 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		014F315D1B8CF5D80062FC24 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		014F315F1B8CFBAB0062FC24 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		014F31611B8CFDB30062FC24 /* PlaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceAnnotation.h; sourceTree = "<group>"; };
+		014F31621B8CFDB30062FC24 /* PlaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceAnnotation.m; sourceTree = "<group>"; };
 		01673EDF1B842121003BF37F /* PolarionLive2015.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarionLive2015.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01673EE31B842121003BF37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01673EE41B842121003BF37F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -134,16 +147,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				01673F441B8505E0003BF37F /* AudioToolbox.framework in Frameworks */,
+				01673F5A1B850DAF003BF37F /* Bolts.framework in Frameworks */,
 				01673F5C1B850E1C003BF37F /* FBSDKCoreKit.framework in Frameworks */,
 				01673F451B8505E0003BF37F /* CFNetwork.framework in Frameworks */,
 				01673F461B8505E0003BF37F /* CoreLocation.framework in Frameworks */,
 				01673F601B850ED4003BF37F /* FBSDKLoginKit.framework in Frameworks */,
 				01673F471B8505E0003BF37F /* libsqlite3.dylib in Frameworks */,
 				01673F481B8505E0003BF37F /* libz.dylib in Frameworks */,
+				014F31601B8CFBAB0062FC24 /* MapKit.framework in Frameworks */,
 				01673F491B8505E0003BF37F /* QuartzCore.framework in Frameworks */,
 				01673F4A1B8505E0003BF37F /* Security.framework in Frameworks */,
 				01673F4B1B8505E0003BF37F /* StoreKit.framework in Frameworks */,
-				01673F5A1B850DAF003BF37F /* Bolts.framework in Frameworks */,
+				01154F531B94ADD500A2D862 /* Social.framework in Frameworks */,
 				01673F4C1B8505E0003BF37F /* SystemConfiguration.framework in Frameworks */,
 				01673F3A1B85057C003BF37F /* Parse.framework in Frameworks */,
 				01673F5E1B850E2E003BF37F /* ParseFacebookUtilsV4.framework in Frameworks */,
@@ -231,6 +246,8 @@
 		01673F0B1B842130003BF37F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01154F521B94ADD500A2D862 /* Social.framework */,
+				014F315F1B8CFBAB0062FC24 /* MapKit.framework */,
 				01673F3B1B8505E0003BF37F /* AudioToolbox.framework */,
 				01673F3C1B8505E0003BF37F /* CFNetwork.framework */,
 				01673F3D1B8505E0003BF37F /* CoreLocation.framework */,
@@ -260,6 +277,8 @@
 		01673F611B851035003BF37F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				014F31611B8CFDB30062FC24 /* PlaceAnnotation.h */,
+				014F31621B8CFDB30062FC24 /* PlaceAnnotation.m */,
 				01673F621B851035003BF37F /* DateObject.h */,
 				01673F631B851035003BF37F /* DateObject.m */,
 				01673F641B851035003BF37F /* SessionInfo.h */,
@@ -273,22 +292,26 @@
 		01673F6B1B851327003BF37F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				01673F6C1B85136A003BF37F /* HomeViewController.h */,
-				01673F6D1B85136A003BF37F /* HomeViewController.m */,
 				01673F6F1B8517A9003BF37F /* AgendaTableViewController.h */,
 				01673F701B8517A9003BF37F /* AgendaTableViewController.m */,
+				01673F6C1B85136A003BF37F /* HomeViewController.h */,
+				01673F6D1B85136A003BF37F /* HomeViewController.m */,
+				016740591B8B8F34003BF37F /* LeftMenuViewController.h */,
+				0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */,
 				01673FAE1B855D4D003BF37F /* LoginViewController.h */,
 				01673FAF1B855D4D003BF37F /* LoginViewController.m */,
-				01673FBA1B864649003BF37F /* SignUpViewController.h */,
-				01673FBB1B864649003BF37F /* SignUpViewController.m */,
-				01673FBD1B865D22003BF37F /* SessionDetailsViewController.h */,
-				01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */,
+				014F315C1B8CF5D80062FC24 /* MapViewController.h */,
+				014F315D1B8CF5D80062FC24 /* MapViewController.m */,
 				01673FC01B868C3E003BF37F /* PartnerViewController.h */,
 				01673FC11B868C3E003BF37F /* PartnerViewController.m */,
 				016740561B8B8EB7003BF37F /* RootViewController.h */,
 				016740571B8B8EB7003BF37F /* RootViewController.m */,
-				016740591B8B8F34003BF37F /* LeftMenuViewController.h */,
-				0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */,
+				01673FBD1B865D22003BF37F /* SessionDetailsViewController.h */,
+				01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */,
+				01673FBA1B864649003BF37F /* SignUpViewController.h */,
+				01673FBB1B864649003BF37F /* SignUpViewController.m */,
+				01154F4F1B94A89600A2D862 /* SocialViewController.h */,
+				01154F501B94A89600A2D862 /* SocialViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -391,6 +414,7 @@
 				TargetAttributes = {
 					01673EDE1B842121003BF37F = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = KCL29RH4A8;
 					};
 					01673EFA1B842121003BF37F = {
 						CreatedOnToolsVersion = 6.4;
@@ -452,15 +476,18 @@
 				01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */,
 				01673FBC1B86464A003BF37F /* SignUpViewController.m in Sources */,
 				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
+				014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */,
 				01673F691B851035003BF37F /* SessionInfo.m in Sources */,
 				01673EEE1B842121003BF37F /* ViewController.m in Sources */,
 				016740531B8B8DB2003BF37F /* RECommonFunctions.m in Sources */,
 				01673FAD1B854686003BF37F /* AgendaTableViewCell.m in Sources */,
 				016740541B8B8DB2003BF37F /* RESideMenu.m in Sources */,
 				01673F681B851035003BF37F /* DateObject.m in Sources */,
+				01154F511B94A89600A2D862 /* SocialViewController.m in Sources */,
 				01673EE51B842121003BF37F /* main.m in Sources */,
 				01673F6E1B85136A003BF37F /* HomeViewController.m in Sources */,
 				01673FB01B855D4D003BF37F /* LoginViewController.m in Sources */,
+				014F31631B8CFDB30062FC24 /* PlaceAnnotation.m in Sources */,
 				016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */,
 				01673F711B8517A9003BF37F /* AgendaTableViewController.m in Sources */,
 				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
@@ -591,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -606,6 +634,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

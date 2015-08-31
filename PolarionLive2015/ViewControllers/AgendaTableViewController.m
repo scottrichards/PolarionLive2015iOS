@@ -29,7 +29,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-  
+  NSLog(@"ViewWillAppear");
 }
 
 - (void)loadData

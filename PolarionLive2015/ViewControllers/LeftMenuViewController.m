@@ -21,8 +21,8 @@ static NSUInteger MENU_POSITION_Y = 100;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  _titles = @[@"Home", @"Agenda", @"Exhibitors", @"Map", @"Raffle", @"Log In"];
-  _images = @[@"IconHome", @"Agenda", @"Exhibitors", @"Map", @"Raffle", @"IconProfile"];
+  _titles = @[@"Home", @"Agenda", @"Exhibitors", @"Map", @"Raffle", @"Log In", @"Social"];
+  _images = @[@"IconHome", @"Agenda", @"Exhibitors", @"Map", @"Raffle", @"IconProfile", @"Social"];
   self.tableView = ({
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, MENU_POSITION_Y, self.view.frame.size.width, 54 * [_titles count]) style:UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
@@ -66,11 +66,22 @@ static NSUInteger MENU_POSITION_Y = 100;
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
+    case 3:
+      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"mapViewController"]]
+                                                   animated:YES];
+      [self.sideMenuViewController hideMenuViewController];
+      break;
     case 5:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"loginViewController"]]
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
+    case 6:
+      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"socialView"]]
+                                                   animated:YES];
+      [self.sideMenuViewController hideMenuViewController];
+      break;
+
     default:
       break;
   }

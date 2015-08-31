@@ -38,6 +38,7 @@
 @property (strong, readwrite, nonatomic) UIView *menuViewContainer;
 @property (strong, readwrite, nonatomic) UIView *contentViewContainer;
 @property (assign, readwrite, nonatomic) BOOL didNotifyDelegate;
+@property (strong, nonatomic) UIView *darkCoverView;      // A view to dim out the inactive container view when menu is active
 
 @end
 
@@ -85,6 +86,7 @@
     _contentViewContainer = [[UIView alloc] init];
     
     _animationDuration = 0.35f;
+//      _animationDuration = 2.5f;
     _interactivePopGestureRecognizerEnabled = YES;
   
     _menuViewControllerTransformation = CGAffineTransformMakeScale(1.5f, 1.5f);
@@ -161,6 +163,7 @@
         [self addChildViewController:contentViewController];
         contentViewController.view.alpha = 0;
         contentViewController.view.frame = self.contentViewContainer.bounds;
+      
         [self.contentViewContainer addSubview:contentViewController.view];
         [UIView animateWithDuration:self.animationDuration animations:^{
             contentViewController.view.alpha = 1;
@@ -281,7 +284,12 @@
     [self addContentButton];
     [self updateContentViewShadow];
     [self resetContentViewScale];
-    
+    CGRect screenRect = [_contentViewController.view bounds];
+    if (!_darkCoverView)    // a view to dim out the container view when the menu is displayed
+      _darkCoverView = [[UIView alloc] initWithFrame:screenRect];
+    [self.contentViewController.view addSubview:_darkCoverView];
+    _darkCoverView.alpha = 0;   // set initial alpha so it is invisible
+    _darkCoverView.backgroundColor = [UIColor blackColor];
     [UIView animateWithDuration:self.animationDuration animations:^{
         if (self.scaleContentView) {
             self.contentViewContainer.transform = CGAffineTransformMakeScale(self.contentViewScaleValue, self.contentViewScaleValue);
@@ -294,7 +302,7 @@
         } else {
             self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? self.contentViewInLandscapeOffsetCenterX + CGRectGetHeight(self.view.frame) : self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame)), self.contentViewContainer.center.y);
         }
-
+        _darkCoverView.alpha = 0.5;     // animate the opacity of our black cover view to 50% to dim the view 
         self.menuViewContainer.alpha = !self.fadeMenuView ?: 1.0f;
         self.contentViewContainer.alpha = self.contentViewFadeOutAlpha;
         self.menuViewContainer.transform = CGAffineTransformIdentity;
@@ -393,7 +401,7 @@
         }
         strongSelf.menuViewContainer.alpha = !self.fadeMenuView ?: 0;
         strongSelf.contentViewContainer.alpha = 1;
-
+        strongSelf.darkCoverView.alpha = 0;     // make the dark cover over conatainer view to right dissappear
         if (strongSelf.scaleBackgroundImageView) {
             strongSelf.backgroundImageView.transform = CGAffineTransformMakeScale(1.7f, 1.7f);
         }
@@ -723,7 +731,7 @@
     }
     [self hideViewController:_contentViewController];
     _contentViewController = contentViewController;
-    
+  
     [self addChildViewController:self.contentViewController];
     self.contentViewController.view.frame = self.view.bounds;
     [self.contentViewContainer addSubview:self.contentViewController.view];

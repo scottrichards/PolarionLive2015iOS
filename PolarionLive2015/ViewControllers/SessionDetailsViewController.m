@@ -47,6 +47,11 @@
   [self addRatingControl];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+  NSLog(@"View will appear");
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

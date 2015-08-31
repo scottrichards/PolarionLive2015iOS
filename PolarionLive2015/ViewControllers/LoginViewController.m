@@ -12,6 +12,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+#import "RaffleViewController.h"
+#import "SignUpViewController.h"
+
 @interface LoginViewController ()
 @property (strong, nonatomic) FBSDKAccessToken *fbToken;
 @property (strong, nonatomic) NSString *userName;
@@ -21,17 +24,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
+
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//  Facebook Login Button
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    // Optional: Place the button in the center of your view.
-//    loginButton.center = self.view.center;
-//    [self.view addSubview:loginButton];
     _fbToken = [FBSDKAccessToken currentAccessToken];
     // Do any additional setup after loading the view.
 }
@@ -82,7 +81,11 @@
       block:^(PFUser *user, NSError *error) {
         if (user) {
           NSLog(@"User %@ logged in",user.username);
-          [self checkForLogin];
+          if ([_delegate isKindOfClass:[RaffleViewController class]]) {   // if we were invoked from RaffleViewController popViewBack to Raffle View
+            [self.navigationController popViewControllerAnimated:YES];
+          } else {
+            [self checkForLogin];
+          }
         } else {
           NSLog(@"LOG In FAILURE:");
           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
@@ -132,14 +135,16 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// pass on the delegate for RaffleView so we can go back to it if needed
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  if ([segue.identifier isEqualToString:@"loginToCreateSegue"]) {
+    SignUpViewController *signUpViewController = [segue destinationViewController];
+    signUpViewController.delegate = self.delegate;
+  }
 }
-*/
+
 
 @end

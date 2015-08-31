@@ -71,6 +71,11 @@ static NSUInteger MENU_POSITION_Y = 100;
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
+    case 4:
+      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"raffleView"]]
+                                                   animated:YES];
+      [self.sideMenuViewController hideMenuViewController];
+      break;
     case 5:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"loginViewController"]]
                                                    animated:YES];

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01154F511B94A89600A2D862 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01154F501B94A89600A2D862 /* SocialViewController.m */; };
 		01154F531B94ADD500A2D862 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01154F521B94ADD500A2D862 /* Social.framework */; };
+		01154F561B94C5DB00A2D862 /* RaffleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01154F551B94C5DB00A2D862 /* RaffleViewController.m */; };
 		014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014F315D1B8CF5D80062FC24 /* MapViewController.m */; };
 		014F31601B8CFBAB0062FC24 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014F315F1B8CFBAB0062FC24 /* MapKit.framework */; };
 		014F31631B8CFDB30062FC24 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 014F31621B8CFDB30062FC24 /* PlaceAnnotation.m */; };
@@ -70,6 +71,8 @@
 		01154F4F1B94A89600A2D862 /* SocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialViewController.h; sourceTree = "<group>"; };
 		01154F501B94A89600A2D862 /* SocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialViewController.m; sourceTree = "<group>"; };
 		01154F521B94ADD500A2D862 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		01154F541B94C5DB00A2D862 /* RaffleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleViewController.h; sourceTree = "<group>"; };
+		01154F551B94C5DB00A2D862 /* RaffleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleViewController.m; sourceTree = "<group>"; };
 		014F315C1B8CF5D80062FC24 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		014F315D1B8CF5D80062FC24 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		014F315F1B8CFBAB0062FC24 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -304,6 +307,8 @@
 				014F315D1B8CF5D80062FC24 /* MapViewController.m */,
 				01673FC01B868C3E003BF37F /* PartnerViewController.h */,
 				01673FC11B868C3E003BF37F /* PartnerViewController.m */,
+				01154F541B94C5DB00A2D862 /* RaffleViewController.h */,
+				01154F551B94C5DB00A2D862 /* RaffleViewController.m */,
 				016740561B8B8EB7003BF37F /* RootViewController.h */,
 				016740571B8B8EB7003BF37F /* RootViewController.m */,
 				01673FBD1B865D22003BF37F /* SessionDetailsViewController.h */,
@@ -478,6 +483,7 @@
 				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
 				014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */,
 				01673F691B851035003BF37F /* SessionInfo.m in Sources */,
+				01154F561B94C5DB00A2D862 /* RaffleViewController.m in Sources */,
 				01673EEE1B842121003BF37F /* ViewController.m in Sources */,
 				016740531B8B8DB2003BF37F /* RECommonFunctions.m in Sources */,
 				01673FAD1B854686003BF37F /* AgendaTableViewCell.m in Sources */,

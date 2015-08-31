@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "RaffleViewController.h"
 
 #import <Parse/Parse.h>
 
@@ -15,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *fullname;
+@property (weak, nonatomic) IBOutlet UITextField *company;
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
+
+
 
 @end
 
@@ -36,11 +41,16 @@
   user.password = self.password.text;
   user.email = self.email.text;
   user[@"fullName"] = self.fullname.text;
+  user[@"company"] = self.company.text;
+  user[@"title"] = self.titleField.text;
   [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if (!error) {
       // Hooray! Let them use the app now.
       NSLog(@"user %@ created",user.username);
-      [self performSegueWithIdentifier:@"signupToLoginSegue" sender:self];
+      if ([_delegate isKindOfClass:[RaffleViewController class]]) {   // if we were invoked from RaffleViewController popViewBack to Raffle View
+        [self.navigationController popToRootViewControllerAnimated:YES];
+      } else
+        [self performSegueWithIdentifier:@"signupToLoginSegue" sender:self];
     } else {
       NSString *errorString = [error userInfo][@"error"];
       // Show the errorString somewhere and let the user try again.
@@ -48,6 +58,17 @@
     }
   }];
 
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+  [textField resignFirstResponder];
+  return YES;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self.view endEditing:YES];
 }
 
 /*

@@ -47,6 +47,30 @@
 }
 
 - (IBAction)onSubmit:(id)sender {
+  if ([_testimonialView.text length] == 0) {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Note"
+                                                    message:@"Please provide a testimonial to enter the raffle."
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    return;
+  } else if (![_usageConsent isOn]) {    // make sure user consented to marketing usage
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Note"
+                                                    message:@"Please consent to marketing usage to enter the raffle."
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    return;
+  } else {
+  }
+}
+
+
+// End Editing when you touch anywhere outside TextView
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self.view endEditing:YES];
 }
 
 /*

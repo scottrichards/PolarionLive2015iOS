@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RaffleViewController : UIViewController
-
+@interface RaffleViewController : UIViewController 
 @end

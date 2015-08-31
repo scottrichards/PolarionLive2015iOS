@@ -8,15 +8,16 @@
 
 #import "LoginViewController.h"
 
-#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Parse/Parse.h>
+//#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+//#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "RaffleViewController.h"
 #import "SignUpViewController.h"
 
 @interface LoginViewController ()
-@property (strong, nonatomic) FBSDKAccessToken *fbToken;
+//@property (strong, nonatomic) FBSDKAccessToken *fbToken;
 @property (strong, nonatomic) NSString *userName;
 @property (weak, nonatomic) IBOutlet UIView *loggedInView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -31,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _fbToken = [FBSDKAccessToken currentAccessToken];
+//    _fbToken = [FBSDKAccessToken currentAccessToken];
     // Do any additional setup after loading the view.
 }
 
@@ -42,20 +43,22 @@
 
 - (void)checkForLogin
 {
+
+//  _fbToken = [FBSDKAccessToken currentAccessToken];
+//  if (_fbToken) {
+//    [_loggedInView setHidden:NO]; // unhide the logged in view
+//    [_loginView setHidden:YES];   // hide the login view
+//    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+//     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+//       if (!error) {
+//         NSLog(@"fetched user:%@", result);
+//         _userName = result[@"name"];
+//         _userNameLabel.text = _userName;
+//       }
+//     }];
+//  } else
   PFUser *currentUser = [PFUser currentUser];
-  _fbToken = [FBSDKAccessToken currentAccessToken];
-  if (_fbToken) {
-    [_loggedInView setHidden:NO]; // unhide the logged in view
-    [_loginView setHidden:YES];   // hide the login view
-    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-       if (!error) {
-         NSLog(@"fetched user:%@", result);
-         _userName = result[@"name"];
-         _userNameLabel.text = _userName;
-       }
-     }];
-  } else if (currentUser) {
+  if (currentUser) {
     _userName = currentUser.username;
     _userNameLabel.text = _userName;
     [_loggedInView setHidden:NO]; // unhide the logged in view
@@ -99,34 +102,34 @@
 
 }
 
-- (IBAction)facebookLogin:(id)sender {
-  [PFFacebookUtils logInInBackgroundWithReadPermissions:@[@"email"] block:^(PFUser *user, NSError *error) {
-    if (error) {
-      NSLog(@"Error: %ld",error.code);
-    } else {
-      NSLog(@"Logged in: ");
-      [self checkForLogin];
-    }
-  }];
-  
-  
-//  This was doing a direct login to Facebook not through Parse Helper class
-//  FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-//  [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+//- (IBAction)facebookLogin:(id)sender {
+//  [PFFacebookUtils logInInBackgroundWithReadPermissions:@[@"email"] block:^(PFUser *user, NSError *error) {
 //    if (error) {
-//      // Process error
-//    } else if (result.isCancelled) {
-//      // Handle cancellations
+//      NSLog(@"Error: %ld",error.code);
 //    } else {
-//      // If you ask for multiple permissions at once, you
-//      // should check if specific permissions missing
-//      if ([result.grantedPermissions containsObject:@"email"]) {
-//        // Do work
-//      }
+//      NSLog(@"Logged in: ");
+//      [self checkForLogin];
 //    }
 //  }];
-  
-}
+//  
+//  
+////  This was doing a direct login to Facebook not through Parse Helper class
+////  FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+////  [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+////    if (error) {
+////      // Process error
+////    } else if (result.isCancelled) {
+////      // Handle cancellations
+////    } else {
+////      // If you ask for multiple permissions at once, you
+////      // should check if specific permissions missing
+////      if ([result.grantedPermissions containsObject:@"email"]) {
+////        // Do work
+////      }
+////    }
+////  }];
+//  
+//}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {

@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 
 #import <Parse/Parse.h>
-#import <ParseFacebookUtilsv4/PFFacebookUtils.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+//#import <ParseFacebookUtilsv4/PFFacebookUtils.h>
+//#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import <FBSDKLoginKit/FBSDKLoginKit.h>
 //
 //#import <UIKit/UIKit.h>
 //#import <Foundation/Foundation.h>
@@ -29,24 +29,24 @@
   
   [Parse setApplicationId:@"ytC7lrxAdRDvguofSHtRLyPe8DdiO5MdC4VdMDoz" clientKey:@"GIX1MZRR1rPqQGEOTEKwyNa6FuHWLhuiy3HyrVPt"];
   
-  [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
-  [FBSDKLoginButton class];
-  // ****************************************************************************
-  // Your Facebook application id is configured in Info.plist.
-  // ****************************************************************************
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                  didFinishLaunchingWithOptions:launchOptions];
+//  [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+//  [FBSDKLoginButton class];
+//  // ****************************************************************************
+//  // Your Facebook application id is configured in Info.plist.
+//  // ****************************************************************************
+//  return [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                  didFinishLaunchingWithOptions:launchOptions];
 
   return YES;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                        openURL:url
-                                              sourceApplication:sourceApplication
-                                                     annotation:annotation
-          ];
-}
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+//  return [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                                        openURL:url
+//                                              sourceApplication:sourceApplication
+//                                                     annotation:annotation
+//          ];
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
   // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

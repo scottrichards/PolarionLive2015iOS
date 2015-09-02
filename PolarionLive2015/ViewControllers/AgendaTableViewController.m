@@ -15,10 +15,10 @@
 #import "AgendaItem.h"
 
 @interface AgendaTableViewController ()
-@property (strong, nonatomic) NSMutableArray *dateArray;       // Array of DateObjects
-@property (strong, nonatomic) NSMutableArray *searchDateArray;       // Array of DateObjects
+@property (strong, nonatomic) NSMutableArray *dateArray;       // Array of DateObjects to Group AgendaItems by Date
+@property (strong, nonatomic) NSMutableArray *searchDateArray;       // Array for Searching of AgendaItems grouped by Date
 @property (strong, nonatomic) NSArray *sessionsArray;       // Copy of All Sessions used for searching
-@property (strong, nonatomic) NSMutableArray *sessionsFilterArray;       // Array of Sessions used for searching
+@property (strong, nonatomic) NSMutableArray *agendaItemsArray;       // Array of AgendaItems objects converted from PFObjects to NSObject used for searching
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSDateFormatter *timeFormatter;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -30,18 +30,12 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  // Search Bar in the title bar
-//  _searchBar = [[UISearchBar alloc] init];
-//  _searchBar.delegate = self;
-//  [[UIBarButtonItem appearanceWhenContainedIn: [UISearchBar class], nil] setTintColor:[UIColor whiteColor]];
-//  self.navigationItem.titleView = _searchBar;
-//  _searchBar.placeholder = @"Search";
-  
   [self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+  [super viewWillAppear:animated];
   NSLog(@"ViewWillAppear");
 }
 
@@ -64,16 +58,7 @@
   
 }
 
-- (void)setUpFilterArray
-{
-  if (!_sessionsFilterArray) {
-    _sessionsFilterArray = [NSMutableArray new];
-    for (PFObject *session in _sessionsArray) {
-      [_sessionsFilterArray addObject:[AgendaItem initWithPFObject:session]];
-    }
-  }
-}
-
+// organize the sessions into DateObjects so all sessions on the same Date are grouped into a DateObject also convert them to AgendaItem objects
 - (void)orderByDate:(NSArray *)objects
 {
   NSString *lastDate = @"";
@@ -83,24 +68,27 @@
   } else {
     [self.dateArray removeAllObjects];
   }
-  for (SessionInfo *session in objects) {
-    
-    NSString *currentDate = [self formatDateWithObject:session];
+  _agendaItemsArray = [NSMutableArray new];
+  for (PFObject *session in _sessionsArray) {
+    [_agendaItemsArray addObject:[AgendaItem initWithPFObject:session]];
+  }
+  
+  for (AgendaItem *agendaItem in _agendaItemsArray) {
+    NSString *currentDate = [self formatDateWithAgendaItem:agendaItem];
     if (![lastDate isEqualToString:currentDate]) {
-      currentDateObject = [[DateObject alloc] initWithDate:session[@"start"] andString:currentDate];
+      currentDateObject = [[DateObject alloc] initWithDate:agendaItem.start andString:currentDate];
       [self.dateArray addObject:currentDateObject];
       lastDate = currentDate;
     }
-    NSLog(@"Item: %@ Date: %@ Time: %@",session[@"session"],[self formatDateWithObject:session], [self formatTimeWithObject:session]);
-    session[@"displayTime"] = [self formatTimeWithObject:session];
+    NSLog(@"Item: %@ Date: %@ Time: %@",agendaItem.sessionName,[self formatDateWithAgendaItem:agendaItem], [self formatTimeWithAgendaItem:agendaItem]);
+    agendaItem.displayTime = [self formatTimeWithAgendaItem:agendaItem];
     //       [self.sessionArray addObject:session];
-    [currentDateObject addSession:session];
+    [currentDateObject addAgendaItem:agendaItem];
   }
 
 }
 
 -(void)filterContentForSearchText:(NSString*)searchText {
-  [self setUpFilterArray];
   NSString *lastDate = @"";
   DateObject *currentDateObject;
   if (self.searchDateArray == nil) {
@@ -109,7 +97,7 @@
     [self.searchDateArray removeAllObjects];
   }
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.sessionName contains[c] %@",searchText];
-  NSArray *filteredSessionsArray = [NSMutableArray arrayWithArray:[_sessionsFilterArray filteredArrayUsingPredicate:predicate]];
+  NSArray *filteredSessionsArray = [NSMutableArray arrayWithArray:[_agendaItemsArray filteredArrayUsingPredicate:predicate]];
   for (AgendaItem *agendaItem in filteredSessionsArray) {
     
     NSString *currentDate = [self formatDateWithAgendaItem:agendaItem];
@@ -120,7 +108,6 @@
     }
     NSLog(@"Item: %@ Date: %@ Time: %@",agendaItem.sessionName,[self formatDateWithAgendaItem:agendaItem], [self formatTimeWithAgendaItem:agendaItem]);
     agendaItem.displayTime = [self formatTimeWithAgendaItem:agendaItem];
-    //       [self.sessionArray addObject:session];
     [currentDateObject addAgendaItem:agendaItem];
   }
   [self.tableView reloadData];
@@ -146,7 +133,7 @@
     return [dateObject.agendaItems count];
   } else {
     DateObject *dateObject = self.dateArray[section];
-    return [dateObject.sessions count];
+    return [dateObject.agendaItems count];
   }
 }
 
@@ -185,13 +172,12 @@
   } else {
     if (indexPath.section < [_dateArray count]) {
       DateObject *dateObject = _dateArray[indexPath.section];
-      if (dateObject && indexPath.row < [dateObject.sessions count]) {
-        SessionInfo *sessionInfo = [dateObject.sessions objectAtIndex:indexPath.row];
-        //      PFObject *agendaObject = _agendaItems[indexPath.row];
-        cell.sessionName.text = sessionInfo[@"session"];
-        cell.location.text = sessionInfo[@"location"];
-        cell.timeLabel.text = sessionInfo[@"displayTime"];
-        NSString *iconImage = sessionInfo[@"icon"];
+      if (dateObject && indexPath.row < [dateObject.agendaItems count]) {
+        AgendaItem *agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
+        cell.sessionName.text = agendaItem.sessionName;
+        cell.location.text = agendaItem.location;
+        cell.timeLabel.text = agendaItem.displayTime;
+        NSString *iconImage = agendaItem.icon;
         if (iconImage)
           [cell.iconImageView setImage:[UIImage imageNamed:iconImage]];
         else
@@ -205,16 +191,21 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  if (indexPath.section < [_dateArray count]) {
-    DateObject *dateObject = _dateArray[indexPath.section];
-    if (dateObject && indexPath.row < [dateObject.sessions count]) {
-        SessionInfo *sessionInfo = [dateObject.sessions objectAtIndex:indexPath.row];
-        NSNumber *customType = sessionInfo[@"customType"];
-        SessionDetailsViewController *sessionDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsController"];
-        if (sessionDetailsVC) {
-          sessionDetailsVC.sessionInfo = sessionInfo;
-          [self.navigationController pushViewController:sessionDetailsVC animated:YES];
-        }
+  DateObject *dateObject;
+  if (_isSearching) {
+    if (indexPath.section < [_searchDateArray count]) {
+      dateObject = _searchDateArray[indexPath.section];
+    }
+  } else {
+    if (indexPath.section < [_dateArray count]) {
+      dateObject = _dateArray[indexPath.section];
+    }
+  }
+  if (dateObject && indexPath.row < [dateObject.agendaItems count]) {
+    SessionDetailsViewController *sessionDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsController"];
+    if (sessionDetailsVC) {
+      sessionDetailsVC.agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
+      [self.navigationController pushViewController:sessionDetailsVC animated:YES];
     }
   }
 }
@@ -295,13 +286,26 @@
   return formattedTimeString;
 }
 
+#pragma mark - UIViewControllerDelegate
+
+// when clicking anywhere in the view controller dismisses the keyboard
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self.view endEditing:YES];
+}
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
   NSLog(@"Search Bar Did Change");
-  if (_isSearching)
-    [self filterContentForSearchText:_searchBar.text];
+  
+    if ([_searchBar.text length] == 0) {  // if no search criteria stop searching
+      _isSearching = NO;
+      [self.tableView reloadData];
+    } else {
+      _isSearching = YES;
+      [self filterContentForSearchText:_searchBar.text];
+    }
 }
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
@@ -314,7 +318,17 @@
 {
   NSLog(@"Search Bar END Editing");
   _isSearching = NO;
+  [self.tableView reloadData];
 }
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+  _isSearching = NO;
+  [self.tableView reloadData];
+  [self.searchBar resignFirstResponder];
+  self.searchBar.text = @"";
+}
+
 
 /*
 // Override to support conditional editing of the table view.

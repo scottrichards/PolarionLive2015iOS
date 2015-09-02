@@ -18,5 +18,6 @@
 @property (strong, nonatomic) NSString *icon;
 @property (strong, nonatomic) NSDate *start;
 @property (strong, nonatomic) NSDate *end;
+@property (strong, nonatomic) PFObject *pfObject;
 + (id)initWithPFObject:(PFObject *)object;
 @end

@@ -9,6 +9,7 @@
 #import "SessionDetailsViewController.h"
 #import "AMRatingControl.h"
 #import "SessionRating.h"
+#import "AgendaItem.h"
 
 #define CONTENT_RATING_X 140
 #define CONTENT_RATING_Y 320
@@ -35,11 +36,11 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.time.text = self.sessionInfo[@"displayTime"];
-  self.sessionName.text = self.sessionInfo[@"session"];
-  self.descriptionLabel.text = self.sessionInfo[@"description"];
-  self.presenters.text = self.sessionInfo[@"presenter"];
-  self.location.text = self.sessionInfo[@"location"];
+  self.time.text = self.agendaItem.displayTime;
+  self.sessionName.text = self.agendaItem.sessionName;
+  self.descriptionLabel.text = self.agendaItem.sessionDescription;
+  self.presenters.text = self.agendaItem.presenter;
+  self.location.text = self.agendaItem.location;
   if ([self.presenters.text length] == 0) // if we don't have any presenter's hide the label
   {
     
@@ -49,6 +50,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+  [super viewWillAppear:animated];
   NSLog(@"View will appear");
 }
 
@@ -60,7 +62,7 @@
 
 - (void)addRatingControl
 {
-  if ([self.sessionInfo[@"rateable"] boolValue] == YES) {
+  if ([self.agendaItem.pfObject[@"rateable"] boolValue] == YES) {
     [self.rateButton setHidden:NO];
     [self.ratingView setHidden:NO];
     self.presenterRating = -1;
@@ -108,7 +110,7 @@
   if (self.presenterRating >= 0) {
     sessionRating[@"presenterRating"] = [NSNumber numberWithInt:self.presenterRating];
     sessionRating[@"contentRating"] = [NSNumber numberWithInt:self.contentRating];
-    sessionRating[@"session"] = self.sessionInfo;
+    sessionRating[@"session"] = self.agendaItem.pfObject;
     sessionRating[@"user"] = [PFUser currentUser];
     [sessionRating saveInBackground];
     [self.navigationController popViewControllerAnimated:YES];

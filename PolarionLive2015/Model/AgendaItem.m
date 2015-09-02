@@ -21,6 +21,7 @@
     agendaItem.end = object[@"end"];
     agendaItem.icon = object[@"icon"];
     agendaItem.location = object[@"location"];
+    agendaItem.pfObject = object;   // point back to the original session object
   }
   return agendaItem;
 }

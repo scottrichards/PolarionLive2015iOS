@@ -10,6 +10,8 @@
 
 #import "SessionInfo.h"
 
+@class AgendaItem;
+
 @interface SessionDetailsViewController : UIViewController
-@property (strong, nonatomic) SessionInfo *sessionInfo;
+@property (strong, nonatomic) AgendaItem *agendaItem;
 @end

@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PFh-wt-2D3">
-                    <rect key="frame" x="60" y="80" width="360" height="437"/>
+                    <rect key="frame" x="60" y="72" width="360" height="437"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Polarion-Logo-BB" translatesAutoresizingMaskIntoConstraints="NO" id="1cG-xT-4dw">
                             <rect key="frame" x="146" y="8" width="62" height="72"/>

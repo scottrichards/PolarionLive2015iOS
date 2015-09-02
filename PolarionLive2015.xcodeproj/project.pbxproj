@@ -54,6 +54,7 @@
 		016740551B8B8DB2003BF37F /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740521B8B8DB2003BF37F /* UIViewController+RESideMenu.m */; };
 		016740581B8B8EB7003BF37F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740571B8B8EB7003BF37F /* RootViewController.m */; };
 		0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */; };
+		01A61F671B96C9B1000A7DAC /* AgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F661B96C9B1000A7DAC /* AgendaItem.m */; };
 		01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,8 @@
 		016740571B8B8EB7003BF37F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		016740591B8B8F34003BF37F /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
 		0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		01A61F651B96C9B1000A7DAC /* AgendaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaItem.h; sourceTree = "<group>"; };
+		01A61F661B96C9B1000A7DAC /* AgendaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaItem.m; sourceTree = "<group>"; };
 		01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +288,8 @@
 				01673F651B851035003BF37F /* SessionInfo.m */,
 				01673F661B851035003BF37F /* SessionRating.h */,
 				01673F671B851035003BF37F /* SessionRating.m */,
+				01A61F651B96C9B1000A7DAC /* AgendaItem.h */,
+				01A61F661B96C9B1000A7DAC /* AgendaItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 				01154F591B94F11F00A2D862 /* WebViewController.m in Sources */,
 				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
 				0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */,
+				01A61F671B96C9B1000A7DAC /* AgendaItem.m in Sources */,
 				016740551B8B8DB2003BF37F /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

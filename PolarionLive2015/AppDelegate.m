@@ -38,7 +38,6 @@
 //                                  didFinishLaunchingWithOptions:launchOptions];
 
 //  [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:35 green:60 blue:105 alpha:1]];
-  UIColor *blueColor = [UIColor blueColor];
   UIColor *polarionBlue = [UIColor colorWithRed:(35/255.0) green:(60/255.0) blue:(105/255.0) alpha:1];
   [[UINavigationBar appearance] setTintColor:polarionBlue];
   

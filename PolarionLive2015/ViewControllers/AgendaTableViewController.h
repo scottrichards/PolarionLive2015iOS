@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AgendaTableViewController : UITableViewController
+@interface AgendaTableViewController : UITableViewController <UISearchBarDelegate>
 
 @end

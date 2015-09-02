@@ -7,6 +7,7 @@
 //
 
 #import "DateObject.h"
+#import "AgendaItem.h"
 
 @implementation DateObject
 
@@ -19,6 +20,7 @@
         self.date = date;
         self.dateString = displayName;
         self.sessions = [[NSMutableArray alloc] init];
+        self.agendaItems = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -26,5 +28,10 @@
 - (void)addSession:(SessionInfo *)session
 {
     [self.sessions addObject:session];
+}
+
+- (void)addAgendaItem:(AgendaItem *)item
+{
+  [self.agendaItems addObject:item];
 }
 @end

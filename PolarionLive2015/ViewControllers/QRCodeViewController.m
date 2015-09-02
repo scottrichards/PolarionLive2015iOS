@@ -1,19 +1,18 @@
 //
-//  HomeViewController.m
+//  QRCodeViewController.m
 //  PolarionLive2015
 //
-//  Created by Scott Richards on 8/19/15.
+//  Created by Scott Richards on 9/1/15.
 //  Copyright (c) 2015 Scott Richards. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import "AgendaTableViewController.h"
+#import "QRCodeViewController.h"
 
-@interface HomeViewController ()
+@interface QRCodeViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation QRCodeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,12 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-// when clicking anywhere in the view controller dismiss the keyboard
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-  AgendaTableViewController *agendaController = [self.storyboard instantiateViewControllerWithIdentifier:@"agendaViewController"];
-  [self.navigationController pushViewController:agendaController animated:YES];
 }
 
 /*

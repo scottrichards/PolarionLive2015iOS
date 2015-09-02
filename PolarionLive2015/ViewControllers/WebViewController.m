@@ -1,23 +1,32 @@
 //
-//  HomeViewController.m
+//  WebViewController.m
 //  PolarionLive2015
 //
-//  Created by Scott Richards on 8/19/15.
+//  Created by Scott Richards on 8/31/15.
 //  Copyright (c) 2015 Scott Richards. All rights reserved.
 //
 
-#import "HomeViewController.h"
-#import "AgendaTableViewController.h"
+#import "WebViewController.h"
 
-@interface HomeViewController ()
+@interface WebViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
-@implementation HomeViewController
+@implementation WebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self loadURL:_urlToLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  [super viewWillAppear:animated];
+  if (self.titleText.length > 0) {
+    self.navigationItem.title = self.titleText;
+  }
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,10 +34,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-// when clicking anywhere in the view controller dismiss the keyboard
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-  AgendaTableViewController *agendaController = [self.storyboard instantiateViewControllerWithIdentifier:@"agendaViewController"];
-  [self.navigationController pushViewController:agendaController animated:YES];
+- (void)loadURL:(NSString *)urlAddress
+{
+  NSURL *url = [NSURL URLWithString:urlAddress];
+  NSURLRequest *request = [NSURLRequest requestWithURL:url];
+  
+  [self.webView loadRequest:request];
 }
 
 /*

@@ -9,10 +9,14 @@
 #import "RaffleViewController.h"
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
+#import "WebViewController.h"
+#import "URLService.h"
 
 @interface RaffleViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *testimonialView;
 @property (weak, nonatomic) IBOutlet UISwitch *usageConsent;
+@property (weak, nonatomic) IBOutlet UIView *finishedView;
+@property (weak, nonatomic) IBOutlet UIView *submitView;
 
 @end
 
@@ -20,6 +24,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  _finishedView.alpha = 0;
   _testimonialView.layer.borderWidth = 1.0f;
   _testimonialView.layer.cornerRadius = 8;
   _testimonialView.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -64,13 +69,56 @@
     [alert show];
     return;
   } else {
+    PFObject *testimonial = [PFObject objectWithClassName:@"Testimonial"];
+    testimonial[@"tesimonial"] = _testimonialView.text;
+    testimonial[@"user"] = [PFUser currentUser];
+    [testimonial saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+      if (!succeeded) {
+        NSLog(@"Error: %@",error);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"There was an error, please check your connection and try again."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+      } else {
+        NSLog(@"Success!");
+        [UIView animateWithDuration: 0.5
+                              delay: 1
+                            options: UIViewAnimationCurveEaseOut
+                         animations:^{
+                           _finishedView.hidden = NO;
+                            _finishedView.alpha = 1;
+                           _submitView.alpha = 0;
+                         }
+                         completion:^(BOOL finished) {
+                           NSLog(@"Done!");
+                           _submitView.hidden = NO;
+                         }];
+      
+      }
+    }];
   }
 }
-
 
 // End Editing when you touch anywhere outside TextView
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   [self.view endEditing:YES];
+}
+
+- (IBAction)onRaffleRules:(id)sender {
+  WebViewController *webViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
+  webViewController.titleText = @"Raffle Rules";
+  webViewController.urlToLoad = [URLService buildURLWithString:@"rules.html"];
+  [self.navigationController pushViewController:webViewController animated:YES];
+}
+
+- (IBAction)onSampleTestimonials:(id)sender {
+  WebViewController *webViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
+  webViewController.titleText = @"Sample Testimonials";
+  webViewController.urlToLoad = [URLService buildURLWithString:@"testimonial.html"];
+  [self.navigationController pushViewController:webViewController animated:YES];
 }
 
 /*

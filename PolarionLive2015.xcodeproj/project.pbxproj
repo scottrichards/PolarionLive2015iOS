@@ -10,6 +10,8 @@
 		01154F511B94A89600A2D862 /* SocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01154F501B94A89600A2D862 /* SocialViewController.m */; };
 		01154F531B94ADD500A2D862 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01154F521B94ADD500A2D862 /* Social.framework */; };
 		01154F561B94C5DB00A2D862 /* RaffleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01154F551B94C5DB00A2D862 /* RaffleViewController.m */; };
+		01154F591B94F11F00A2D862 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01154F581B94F11F00A2D862 /* WebViewController.m */; };
+		01154F5C1B94F85500A2D862 /* URLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 01154F5B1B94F85500A2D862 /* URLService.m */; };
 		014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014F315D1B8CF5D80062FC24 /* MapViewController.m */; };
 		014F31601B8CFBAB0062FC24 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014F315F1B8CFBAB0062FC24 /* MapKit.framework */; };
 		014F31631B8CFDB30062FC24 /* PlaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 014F31621B8CFDB30062FC24 /* PlaceAnnotation.m */; };
@@ -52,6 +54,7 @@
 		016740551B8B8DB2003BF37F /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740521B8B8DB2003BF37F /* UIViewController+RESideMenu.m */; };
 		016740581B8B8EB7003BF37F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740571B8B8EB7003BF37F /* RootViewController.m */; };
 		0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */; };
+		01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,10 @@
 		01154F521B94ADD500A2D862 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		01154F541B94C5DB00A2D862 /* RaffleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleViewController.h; sourceTree = "<group>"; };
 		01154F551B94C5DB00A2D862 /* RaffleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleViewController.m; sourceTree = "<group>"; };
+		01154F571B94F11F00A2D862 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		01154F581B94F11F00A2D862 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		01154F5A1B94F85500A2D862 /* URLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLService.h; sourceTree = "<group>"; };
+		01154F5B1B94F85500A2D862 /* URLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLService.m; sourceTree = "<group>"; };
 		014F315C1B8CF5D80062FC24 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		014F315D1B8CF5D80062FC24 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		014F315F1B8CFBAB0062FC24 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -136,6 +143,8 @@
 		016740571B8B8EB7003BF37F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		016740591B8B8F34003BF37F /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController.h; sourceTree = "<group>"; };
 		0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
+		01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +314,10 @@
 				01673FBB1B864649003BF37F /* SignUpViewController.m */,
 				01154F4F1B94A89600A2D862 /* SocialViewController.h */,
 				01154F501B94A89600A2D862 /* SocialViewController.m */,
+				01154F571B94F11F00A2D862 /* WebViewController.h */,
+				01154F581B94F11F00A2D862 /* WebViewController.m */,
+				01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */,
+				01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +345,8 @@
 		01673FFB1B87B535003BF37F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				01154F5A1B94F85500A2D862 /* URLService.h */,
+				01154F5B1B94F85500A2D862 /* URLService.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -468,8 +483,10 @@
 				01673F6A1B851035003BF37F /* SessionRating.m in Sources */,
 				01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */,
 				01673FBC1B86464A003BF37F /* SignUpViewController.m in Sources */,
+				01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */,
 				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
 				014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */,
+				01154F5C1B94F85500A2D862 /* URLService.m in Sources */,
 				01673F691B851035003BF37F /* SessionInfo.m in Sources */,
 				01154F561B94C5DB00A2D862 /* RaffleViewController.m in Sources */,
 				01673EEE1B842121003BF37F /* ViewController.m in Sources */,
@@ -484,6 +501,7 @@
 				014F31631B8CFDB30062FC24 /* PlaceAnnotation.m in Sources */,
 				016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */,
 				01673F711B8517A9003BF37F /* AgendaTableViewController.m in Sources */,
+				01154F591B94F11F00A2D862 /* WebViewController.m in Sources */,
 				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
 				0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */,
 				016740551B8B8DB2003BF37F /* UIViewController+RESideMenu.m in Sources */,

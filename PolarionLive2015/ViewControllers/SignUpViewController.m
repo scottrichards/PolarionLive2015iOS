@@ -67,6 +67,7 @@
   return YES;
 }
 
+// when clicking anywhere in the view controller dismiss the keyboard
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   [self.view endEditing:YES];
 }

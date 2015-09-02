@@ -192,12 +192,25 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-AX-qyg">
+                                        <rect key="frame" x="14" y="280" width="82" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Raffle Rules">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onRaffleRules:" destination="Ggk-5q-qMf" eventType="touchUpInside" id="yFV-kQ-fWg"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoC-f7-HMz">
                                         <rect key="frame" x="171" y="280" width="141" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Sample Testimonials">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSampleTestimonials:" destination="Ggk-5q-qMf" eventType="touchUpInside" id="RMk-52-QCJ"/>
+                                        </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IGd-MM-kCP">
                                         <rect key="frame" x="229" y="318" width="51" height="31"/>
@@ -208,12 +221,17 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-AX-qyg">
-                                        <rect key="frame" x="14" y="280" width="82" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Raffle Rules">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-PV-dMK">
+                                        <rect key="frame" x="128" y="371" width="70" height="30"/>
+                                        <color key="backgroundColor" red="0.13725490200000001" green="0.23529411759999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Enter">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSubmit:" destination="Ggk-5q-qMf" eventType="touchUpInside" id="fXC-5r-P2o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -222,22 +240,44 @@
                                     <constraint firstAttribute="width" constant="320" id="w3R-Zy-V6n"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-PV-dMK">
-                                <rect key="frame" x="265" y="450" width="70" height="30"/>
-                                <color key="backgroundColor" red="0.13725490200000001" green="0.23529411759999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Enter">
-                                    <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSubmit:" destination="Ggk-5q-qMf" eventType="touchUpInside" id="fXC-5r-P2o"/>
-                                </connections>
-                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAV-VG-e7P">
+                                <rect key="frame" x="140" y="77" width="320" height="380"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks for submitting your testimonial!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efK-2t-m1M">
+                                        <rect key="frame" x="11" y="179" width="298" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="380" id="VJj-hW-cQP"/>
+                                    <constraint firstAttribute="width" constant="320" id="fb6-Jq-3Bt"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zus-ee-dEP">
+                                <rect key="frame" x="150" y="87" width="320" height="380"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thanks for submitting your testimonial!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zof-Ay-gJV">
+                                        <rect key="frame" x="11" y="179" width="298" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="380" id="9h1-2y-IKm"/>
+                                    <constraint firstAttribute="width" constant="320" id="Xx0-vq-DCp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ldY-IA-0bE" firstAttribute="top" secondItem="Eun-3m-jP5" secondAttribute="bottom" constant="18" id="AmA-Bc-kNN"/>
+                            <constraint firstAttribute="centerX" secondItem="xAV-VG-e7P" secondAttribute="centerX" id="Be7-Fw-P8d"/>
+                            <constraint firstItem="xAV-VG-e7P" firstAttribute="top" secondItem="Eun-3m-jP5" secondAttribute="bottom" constant="13" id="cPA-kq-din"/>
                             <constraint firstAttribute="centerX" secondItem="ldY-IA-0bE" secondAttribute="centerX" id="hzU-Yw-oKU"/>
                         </constraints>
                     </view>
@@ -249,6 +289,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="finishedView" destination="xAV-VG-e7P" id="zCc-o5-FJY"/>
+                        <outlet property="submitView" destination="ldY-IA-0bE" id="PRe-id-xtJ"/>
                         <outlet property="testimonialView" destination="jMv-CL-UaC" id="e9t-dU-i1y"/>
                         <outlet property="usageConsent" destination="IGd-MM-kCP" id="XmA-Jv-bUD"/>
                     </connections>
@@ -256,6 +298,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iM7-2b-Lpo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2096" y="4424"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="kBa-bF-vW2">
+            <objects>
+                <viewController storyboardIdentifier="webViewController" id="Wx9-Qk-S7r" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QX5-F4-6Oz"/>
+                        <viewControllerLayoutGuide type="bottom" id="J4n-T7-d2X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8eq-Gd-Fyx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3i7-Zy-bFE">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3i7-Zy-bFE" secondAttribute="trailing" id="DNF-OE-Ev6"/>
+                            <constraint firstItem="3i7-Zy-bFE" firstAttribute="top" secondItem="QX5-F4-6Oz" secondAttribute="bottom" id="Y7I-sQ-TUw"/>
+                            <constraint firstItem="3i7-Zy-bFE" firstAttribute="leading" secondItem="8eq-Gd-Fyx" secondAttribute="leading" id="pTy-2w-7cA"/>
+                            <constraint firstItem="J4n-T7-d2X" firstAttribute="top" secondItem="3i7-Zy-bFE" secondAttribute="bottom" id="xCO-dK-ymI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3oG-zU-yBd"/>
+                    <connections>
+                        <outlet property="webView" destination="3i7-Zy-bFE" id="jfj-FW-UgI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2mM-a5-Gv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2205" y="5139"/>
         </scene>
         <!--Social-->
         <scene sceneID="c7E-dV-aGB">
@@ -936,6 +1012,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XF3-kS-Lna" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1342" y="4431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sJx-cu-bxr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wUA-Em-wVC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hJT-5M-pBz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wx9-Qk-S7r" kind="relationship" relationship="rootViewController" id="p9f-H4-kwf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="It9-Vw-99M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1477" y="5139"/>
         </scene>
     </scenes>
     <resources>

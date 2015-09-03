@@ -10,36 +10,36 @@
             <rect key="frame" x="0.0" y="0.0" width="494" height="587"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PFh-wt-2D3">
-                    <rect key="frame" x="60" y="72" width="360" height="437"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFh-wt-2D3">
+                    <rect key="frame" x="87" y="40" width="320" height="437"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Polarion-Logo-BB" translatesAutoresizingMaskIntoConstraints="NO" id="1cG-xT-4dw">
-                            <rect key="frame" x="146" y="8" width="62" height="72"/>
+                            <rect key="frame" x="126" y="8" width="62" height="72"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Polarion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dft-AF-aDA">
-                            <rect key="frame" x="74" y="96" width="154" height="36"/>
+                            <rect key="frame" x="54" y="96" width="154" height="36"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="36"/>
                             <color key="textColor" red="0.13725490200000001" green="0.23529411759999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Live!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-A6-ivS">
-                            <rect key="frame" x="206" y="95" width="81" height="43"/>
+                            <rect key="frame" x="186" y="95" width="81" height="43"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                             <color key="textColor" red="0.13725490200000001" green="0.23529411759999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EMEA User Conference 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3H-un-VDd">
-                            <rect key="frame" x="28" y="156" width="298" height="36"/>
+                            <rect key="frame" x="8" y="156" width="298" height="36"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uUU-7q-FQM">
-                            <rect key="frame" x="20" y="217" width="320" height="188"/>
+                            <rect key="frame" x="0.0" y="217" width="320" height="188"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.91764705879999997" green="0.94509803920000002" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="360" id="2zD-vp-8an"/>
+                        <constraint firstAttribute="width" constant="320" id="2zD-vp-8an"/>
                         <constraint firstAttribute="height" constant="437" id="LgF-I7-5Kl"/>
                     </constraints>
                 </view>
@@ -47,7 +47,7 @@
             <color key="backgroundColor" red="0.91764705882352937" green="0.94509803921568625" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="PFh-wt-2D3" secondAttribute="centerX" id="Ibt-Jr-66U"/>
-                <constraint firstAttribute="centerY" secondItem="PFh-wt-2D3" secondAttribute="centerY" id="X9U-bY-Bfn"/>
+                <constraint firstAttribute="centerY" secondItem="PFh-wt-2D3" secondAttribute="centerY" constant="35" id="X9U-bY-Bfn"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

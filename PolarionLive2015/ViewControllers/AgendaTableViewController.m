@@ -14,6 +14,8 @@
 #import "DateObject.h"
 #import "AgendaItem.h"
 
+static CGFloat kSectionHeaderHeight = 40.0F;  // Section Header Height with the Date
+
 @interface AgendaTableViewController ()
 @property (strong, nonatomic) NSMutableArray *dateArray;       // Array of DateObjects to Group AgendaItems by Date
 @property (strong, nonatomic) NSMutableArray *searchDateArray;       // Array for Searching of AgendaItems grouped by Date
@@ -22,7 +24,8 @@
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSDateFormatter *timeFormatter;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (assign) BOOL isSearching;
+@property (assign, nonatomic) BOOL isSearching;   // if we are currently doing a search
+@property (assign, nonatomic) BOOL wasSearching;  // retain the state when we are dismissing the view
 @end
 
 @implementation AgendaTableViewController
@@ -36,7 +39,22 @@
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
+  NSLog(@"Is Searching %@",_isSearching ? @"YES" : @"NO");
   NSLog(@"ViewWillAppear");
+  if (_wasSearching) {
+    _isSearching = YES;
+    [self filterContentForSearchText:_searchBar.text];
+  }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+  [super viewWillDisappear:animated];
+  if (_isSearching) {
+    _wasSearching = YES;
+  } else {
+    _wasSearching = NO;
+  }
 }
 
 #pragma mark - Data Structures
@@ -210,24 +228,11 @@
   }
 }
 
-
-- (NSString *)formatDateWithObject:(PFObject *)object
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-  if (self.dateFormatter == nil) {
-    self.dateFormatter = [[NSDateFormatter alloc] init];
-    NSString *formatString = [NSDateFormatter dateFormatFromTemplate:@"EEEEdMMMM" options:0
-                                                              locale:[NSLocale currentLocale]];
-    [self.dateFormatter setDateFormat:formatString];
-    
-  }
-  
-  NSDate *date = object[@"start"];
-  
-  NSString *formattedDateString = [NSString stringWithFormat:@"%@",[self.dateFormatter stringFromDate:date]];
-  NSLog(@"formattedDateString: %@", formattedDateString);
-  
-  return formattedDateString;
+  return kSectionHeaderHeight;
 }
+
 
 - (NSString *)formatDateWithAgendaItem:(AgendaItem *)agendaItem
 {
@@ -245,26 +250,6 @@
   NSLog(@"formattedDateString: %@", formattedDateString);
   
   return formattedDateString;
-}
-
-- (NSString *)formatTimeWithObject:(PFObject *)object
-{
-  
-  if (self.timeFormatter == nil) {
-    self.timeFormatter = [[NSDateFormatter alloc] init];
-    [self.timeFormatter setDateFormat:@"H:mm"];
-    [self.timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-  }
-  NSDate *date = object[@"start"];
-  NSString *formattedTimeString;
-  if (object[@"end"] == nil) {
-    formattedTimeString = [self.timeFormatter stringFromDate:date];
-  } else {
-    formattedTimeString = [NSString stringWithFormat:@"%@-%@",[self.timeFormatter stringFromDate:date],[self.timeFormatter stringFromDate:object[@"end"]]];
-  }
-  NSLog(@"formattedTimeString: %@", formattedTimeString);
-  
-  return formattedTimeString;
 }
 
 - (NSString *)formatTimeWithAgendaItem:(AgendaItem *)agendaItem
@@ -324,6 +309,7 @@
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
   _isSearching = NO;
+  _wasSearching = NO;
   [self.tableView reloadData];
   [self.searchBar resignFirstResponder];
   self.searchBar.text = @"";

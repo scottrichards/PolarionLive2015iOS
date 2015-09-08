@@ -55,6 +55,8 @@
 		016740581B8B8EB7003BF37F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740571B8B8EB7003BF37F /* RootViewController.m */; };
 		0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */; };
 		01A61F671B96C9B1000A7DAC /* AgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F661B96C9B1000A7DAC /* AgendaItem.m */; };
+		01A61F6A1B98AE5B000A7DAC /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */; };
+		01A61F6D1B98B3D7000A7DAC /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */; };
 		01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +148,10 @@
 		0167405A1B8B8F34003BF37F /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController.m; sourceTree = "<group>"; };
 		01A61F651B96C9B1000A7DAC /* AgendaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaItem.h; sourceTree = "<group>"; };
 		01A61F661B96C9B1000A7DAC /* AgendaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaItem.m; sourceTree = "<group>"; };
+		01A61F681B98AE5B000A7DAC /* SpeakerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewController.h; sourceTree = "<group>"; };
+		01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewController.m; sourceTree = "<group>"; };
+		01A61F6B1B98B3D7000A7DAC /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewCell.h; sourceTree = "<group>"; };
+		01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewCell.m; sourceTree = "<group>"; };
 		01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +315,8 @@
 				014F315D1B8CF5D80062FC24 /* MapViewController.m */,
 				01673FC01B868C3E003BF37F /* PartnerViewController.h */,
 				01673FC11B868C3E003BF37F /* PartnerViewController.m */,
+				01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */,
+				01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */,
 				01154F541B94C5DB00A2D862 /* RaffleViewController.h */,
 				01154F551B94C5DB00A2D862 /* RaffleViewController.m */,
 				016740561B8B8EB7003BF37F /* RootViewController.h */,
@@ -319,10 +327,10 @@
 				01673FBB1B864649003BF37F /* SignUpViewController.m */,
 				01154F4F1B94A89600A2D862 /* SocialViewController.h */,
 				01154F501B94A89600A2D862 /* SocialViewController.m */,
+				01A61F681B98AE5B000A7DAC /* SpeakerTableViewController.h */,
+				01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */,
 				01154F571B94F11F00A2D862 /* WebViewController.h */,
 				01154F581B94F11F00A2D862 /* WebViewController.m */,
-				01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */,
-				01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +340,8 @@
 			children = (
 				01673FAB1B854686003BF37F /* AgendaTableViewCell.h */,
 				01673FAC1B854686003BF37F /* AgendaTableViewCell.m */,
+				01A61F6B1B98B3D7000A7DAC /* SpeakerTableViewCell.h */,
+				01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -488,6 +498,7 @@
 				01673F6A1B851035003BF37F /* SessionRating.m in Sources */,
 				01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */,
 				01673FBC1B86464A003BF37F /* SignUpViewController.m in Sources */,
+				01A61F6D1B98B3D7000A7DAC /* SpeakerTableViewCell.m in Sources */,
 				01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */,
 				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
 				014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */,
@@ -508,6 +519,7 @@
 				01673F711B8517A9003BF37F /* AgendaTableViewController.m in Sources */,
 				01154F591B94F11F00A2D862 /* WebViewController.m in Sources */,
 				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
+				01A61F6A1B98AE5B000A7DAC /* SpeakerTableViewController.m in Sources */,
 				0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */,
 				01A61F671B96C9B1000A7DAC /* AgendaItem.m in Sources */,
 				016740551B8B8DB2003BF37F /* UIViewController+RESideMenu.m in Sources */,
@@ -642,6 +654,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PolarionLive2015/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -658,6 +671,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PolarionLive2015/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

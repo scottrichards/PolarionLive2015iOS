@@ -37,9 +37,9 @@
 //  return [[FBSDKApplicationDelegate sharedInstance] application:application
 //                                  didFinishLaunchingWithOptions:launchOptions];
 
-//  [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:35 green:60 blue:105 alpha:1]];
-  UIColor *polarionBlue = [UIColor colorWithRed:(35/255.0) green:(60/255.0) blue:(105/255.0) alpha:1];
-  [[UINavigationBar appearance] setTintColor:polarionBlue];
+
+  UIColor *polarionBlue = [UIColor colorWithRed:(35/255.0) green:(60/255.0) blue:(105/255.0) alpha:1];    // Polarion Blue Color
+  [[UINavigationBar appearance] setTintColor:polarionBlue];   // set back button and Menu Button to be Polarion Blue
   
   return YES;
 }

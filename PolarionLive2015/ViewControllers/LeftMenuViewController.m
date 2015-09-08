@@ -21,8 +21,8 @@ static NSUInteger MENU_POSITION_Y = 100;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  _titles = @[@"Home", @"Agenda", @"Exhibitors", @"Map", @"Raffle", @"Log In", @"Social"];
-  _images = @[@"IconHome", @"Agenda", @"Exhibitors", @"Map", @"Raffle", @"IconProfile", @"Social"];
+  _titles = @[@"Home", @"Agenda", @"Speakers", @"Map", @"Raffle", @"Log In", @"Social"];
+  _images = @[@"IconHome", @"Agenda", @"Speaker", @"Map", @"Raffle", @"IconProfile", @"Social"];
   self.tableView = ({
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, MENU_POSITION_Y, self.view.frame.size.width, 54 * [_titles count]) style:UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
@@ -61,11 +61,17 @@ static NSUInteger MENU_POSITION_Y = 100;
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
+//    case 2:
+//      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"partnerViewController"]]
+//                                                   animated:YES];
+//      [self.sideMenuViewController hideMenuViewController];
+//      break;
     case 2:
-      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"partnerViewController"]]
+      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"speakerViewController"]]
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
+
     case 3:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"mapViewController"]]
                                                    animated:YES];

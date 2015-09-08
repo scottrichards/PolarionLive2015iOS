@@ -52,10 +52,11 @@
   /* Create the annotation using the location */
   PlaceAnnotation *placeMarker =  [[PlaceAnnotation alloc] initWithCoordinates:location
                                                                          title:@"Movenpick Stuttgart"
-                                                                      subTitle:nil];
+                                                                      subTitle:@"Flughafenstrasse 50"];
   
   /* And eventually add it to the map */
   [self.mapView addAnnotation:placeMarker];
+  [self.mapView selectAnnotation:placeMarker animated:YES];   // Open up the annotation
 }
 /*
 #pragma mark - Navigation

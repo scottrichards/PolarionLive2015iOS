@@ -58,6 +58,7 @@
 		01A61F6A1B98AE5B000A7DAC /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */; };
 		01A61F6D1B98B3D7000A7DAC /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */; };
 		01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */; };
+		01F74D671BB3A35E00445F73 /* HTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F74D661BB3A35E00445F73 /* HTMLViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewCell.m; sourceTree = "<group>"; };
 		01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		01F74D651BB3A35E00445F73 /* HTMLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLViewController.h; sourceTree = "<group>"; };
+		01F74D661BB3A35E00445F73 /* HTMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +334,8 @@
 				01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */,
 				01154F571B94F11F00A2D862 /* WebViewController.h */,
 				01154F581B94F11F00A2D862 /* WebViewController.m */,
+				01F74D651BB3A35E00445F73 /* HTMLViewController.h */,
+				01F74D661BB3A35E00445F73 /* HTMLViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */,
 				01673F711B8517A9003BF37F /* AgendaTableViewController.m in Sources */,
 				01154F591B94F11F00A2D862 /* WebViewController.m in Sources */,
+				01F74D671BB3A35E00445F73 /* HTMLViewController.m in Sources */,
 				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
 				01A61F6A1B98AE5B000A7DAC /* SpeakerTableViewController.m in Sources */,
 				0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */,

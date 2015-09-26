@@ -8,6 +8,8 @@
 
 #import "LeftMenuViewController.h"
 #import "UIViewController+RESideMenu.h"
+#import "HTMLViewController.h"
+#import "URLService.h"
 
 static NSUInteger MENU_POSITION_Y = 100;
 
@@ -21,8 +23,8 @@ static NSUInteger MENU_POSITION_Y = 100;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  _titles = @[@"Home", @"Agenda", @"Speakers", @"Map", @"Raffle", @"Log In", @"Social"];
-  _images = @[@"IconHome", @"Agenda", @"Speaker", @"Map", @"Raffle", @"IconProfile", @"Social"];
+  _titles = @[@"Home", @"Agenda", @"Speakers", @"Partners", @"Map", @"Raffle", @"Log In", @"Social"];
+  _images = @[@"IconHome", @"Agenda", @"Speaker", @"Partners", @"Map", @"Raffle", @"IconProfile", @"Social"];
   self.tableView = ({
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, MENU_POSITION_Y, self.view.frame.size.width, 54 * [_titles count]) style:UITableViewStylePlain];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
@@ -49,6 +51,7 @@ static NSUInteger MENU_POSITION_Y = 100;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
   switch (indexPath.row) {
     case 0:
@@ -71,23 +74,36 @@ static NSUInteger MENU_POSITION_Y = 100;
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
-
     case 3:
+    {
+      HTMLViewController *htmlViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"htmlView"];
+      
+//      htmlViewController = (HTMLViewController *)[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"htmlView"]];
+  
+      htmlViewController.urlToLoad = [URLService buildURLWithString:@"2015m/partners/index.html"];
+//      [self.sideMenuViewController setContentViewController:htmlViewController
+//                                                   animated:YES];
+      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:htmlViewController]
+                                                   animated:YES];
+      [self.sideMenuViewController hideMenuViewController];
+      break;
+    }
+    case 4:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"mapViewController"]]
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
-    case 4:
+    case 5:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"raffleView"]]
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
-    case 5:
+    case 6:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"loginViewController"]]
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
-    case 6:
+    case 7:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"socialView"]]
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];

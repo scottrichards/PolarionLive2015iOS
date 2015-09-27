@@ -46,7 +46,6 @@
 		01673FB91B855DDD003BF37F /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01673FB51B855DDD003BF37F /* login-button-small@2x.png */; };
 		01673FBC1B86464A003BF37F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FBB1B864649003BF37F /* SignUpViewController.m */; };
 		01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */; };
-		01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01673FC11B868C3E003BF37F /* PartnerViewController.m */; };
 		016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 016740471B8ACB2E003BF37F /* AMRatingControl.m */; };
 		0167404B1B8B7BD5003BF37F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016740491B8B7BD5003BF37F /* LaunchScreen.xib */; };
 		016740531B8B8DB2003BF37F /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167404E1B8B8DB2003BF37F /* RECommonFunctions.m */; };
@@ -58,7 +57,7 @@
 		01A61F6A1B98AE5B000A7DAC /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */; };
 		01A61F6D1B98B3D7000A7DAC /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */; };
 		01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */; };
-		01F74D671BB3A35E00445F73 /* HTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F74D661BB3A35E00445F73 /* HTMLViewController.m */; };
+		01E578EE1BB772E400D4D498 /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E578ED1BB772E400D4D498 /* PartnersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,8 +131,6 @@
 		01673FBB1B864649003BF37F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		01673FBD1B865D22003BF37F /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
 		01673FBE1B865D22003BF37F /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
-		01673FC01B868C3E003BF37F /* PartnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerViewController.h; sourceTree = "<group>"; };
-		01673FC11B868C3E003BF37F /* PartnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerViewController.m; sourceTree = "<group>"; };
 		016740461B8ACB2E003BF37F /* AMRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMRatingControl.h; sourceTree = "<group>"; };
 		016740471B8ACB2E003BF37F /* AMRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMRatingControl.m; sourceTree = "<group>"; };
 		0167404A1B8B7BD5003BF37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -155,8 +152,8 @@
 		01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewCell.m; sourceTree = "<group>"; };
 		01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
-		01F74D651BB3A35E00445F73 /* HTMLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLViewController.h; sourceTree = "<group>"; };
-		01F74D661BB3A35E00445F73 /* HTMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLViewController.m; sourceTree = "<group>"; };
+		01E578EC1BB772E400D4D498 /* PartnersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnersViewController.h; sourceTree = "<group>"; };
+		01E578ED1BB772E400D4D498 /* PartnersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,8 +313,6 @@
 				01673FAF1B855D4D003BF37F /* LoginViewController.m */,
 				014F315C1B8CF5D80062FC24 /* MapViewController.h */,
 				014F315D1B8CF5D80062FC24 /* MapViewController.m */,
-				01673FC01B868C3E003BF37F /* PartnerViewController.h */,
-				01673FC11B868C3E003BF37F /* PartnerViewController.m */,
 				01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */,
 				01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */,
 				01154F541B94C5DB00A2D862 /* RaffleViewController.h */,
@@ -334,8 +329,8 @@
 				01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */,
 				01154F571B94F11F00A2D862 /* WebViewController.h */,
 				01154F581B94F11F00A2D862 /* WebViewController.m */,
-				01F74D651BB3A35E00445F73 /* HTMLViewController.h */,
-				01F74D661BB3A35E00445F73 /* HTMLViewController.m */,
+				01E578EC1BB772E400D4D498 /* PartnersViewController.h */,
+				01E578ED1BB772E400D4D498 /* PartnersViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -499,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01673EE81B842121003BF37F /* AppDelegate.m in Sources */,
+				01E578EE1BB772E400D4D498 /* PartnersViewController.m in Sources */,
 				016740581B8B8EB7003BF37F /* RootViewController.m in Sources */,
 				01673F6A1B851035003BF37F /* SessionRating.m in Sources */,
 				01673FBF1B865D22003BF37F /* SessionDetailsViewController.m in Sources */,
@@ -523,8 +519,6 @@
 				016740481B8ACB2E003BF37F /* AMRatingControl.m in Sources */,
 				01673F711B8517A9003BF37F /* AgendaTableViewController.m in Sources */,
 				01154F591B94F11F00A2D862 /* WebViewController.m in Sources */,
-				01F74D671BB3A35E00445F73 /* HTMLViewController.m in Sources */,
-				01673FC21B868C3E003BF37F /* PartnerViewController.m in Sources */,
 				01A61F6A1B98AE5B000A7DAC /* SpeakerTableViewController.m in Sources */,
 				0167405B1B8B8F34003BF37F /* LeftMenuViewController.m in Sources */,
 				01A61F671B96C9B1000A7DAC /* AgendaItem.m in Sources */,

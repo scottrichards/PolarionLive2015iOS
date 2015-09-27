@@ -17,8 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self loadURL:_urlToLoad];
-      [self loadURL:@"http://www.google.com"];
+    [self loadURL:_urlToLoad];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -1,33 +1,33 @@
 //
-//  WebViewController.m
+//  PartnersViewController.m
 //  PolarionLive2015
 //
-//  Created by Scott Richards on 8/31/15.
+//  Created by Scott Richards on 9/26/15.
 //  Copyright (c) 2015 Scott Richards. All rights reserved.
 //
 
-#import "WebViewController.h"
+#import "PartnersViewController.h"
+#import "URLService.h"
 
-@interface WebViewController ()
+@interface PartnersViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
-@implementation WebViewController
+static NSString *oldPartnerURL =  @"http://54.183.27.217/partners.php";
+static NSString *partnerURL =  @"2015m/partners/index.html";
+
+@implementation PartnersViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self loadURL:_urlToLoad];
-      [self loadURL:@"http://www.google.com"];
+    [self loadURL:[URLService buildURLWithString:partnerURL]];
+//  [self loadURL:oldPartnerURL];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-  [super viewWillAppear:animated];
-  if (self.titleText.length > 0) {
-    self.navigationItem.title = self.titleText;
-  }
-  
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillLayoutSubviews {
@@ -35,20 +35,13 @@
   _webView.scrollView.contentInset = UIEdgeInsetsZero;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)loadURL:(NSString *)urlAddress
 {
   NSURL *url = [NSURL URLWithString:urlAddress];
   NSURLRequest *request = [NSURLRequest requestWithURL:url];
   
-  [self.webView loadRequest:request];
+  [_webView loadRequest:request];
 }
-
 /*
 #pragma mark - Navigation
 

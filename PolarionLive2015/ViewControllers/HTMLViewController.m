@@ -16,8 +16,30 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+//  self.automaticallyAdjustsScrollViewInsets = NO;
+//  NSLog(@"_webView.frame.origin.y %f",_webView.frame.origin.y);
+//  CGRect webViewFrameRect = _webView.frame;
+//  webViewFrameRect.origin.y = 0;
+//  [_webView setFrame:webViewFrameRect];
+//  NSLog(@"_webView.frame.origin.y %f",_webView.frame.origin.y);
+//  NSLog(@"_webView.scrollView.contentInset %f",_webView.scrollView.contentInset.top);
+  _webView.scrollView.contentInset = UIEdgeInsetsZero;
   [self loadURL:_urlToLoad];
 }
+
+
+- (void)viewWillLayoutSubviews {
+  [super viewWillLayoutSubviews];
+  _webView.scrollView.contentInset = UIEdgeInsetsZero;
+//  _webView.scrollView.contentInset = UIEdgeInsetsZero;
+//  NSLog(@"_webView.frame.origin.y %f",_webView.frame.origin.y);
+//  CGRect webViewFrameRect = _webView.frame;
+//  webViewFrameRect.origin.y = 0;
+//  [_webView setFrame:webViewFrameRect];
+//  NSLog(@"_webView.frame.origin.y %f",_webView.frame.origin.y);
+//  NSLog(@"_webView.scrollView.contentInset %f",_webView.scrollView.contentInset.top);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -76,14 +76,7 @@ static NSUInteger MENU_POSITION_Y = 100;
       break;
     case 3:
     {
-      HTMLViewController *htmlViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"htmlView"];
-      
-//      htmlViewController = (HTMLViewController *)[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"htmlView"]];
-  
-      htmlViewController.urlToLoad = [URLService buildURLWithString:@"2015m/partners/index.html"];
-//      [self.sideMenuViewController setContentViewController:htmlViewController
-//                                                   animated:YES];
-      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:htmlViewController]
+      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"partnersViewController"]]
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;

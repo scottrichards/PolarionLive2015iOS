@@ -64,11 +64,6 @@ static NSUInteger MENU_POSITION_Y = 100;
                                                    animated:YES];
       [self.sideMenuViewController hideMenuViewController];
       break;
-//    case 2:
-//      [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"partnerViewController"]]
-//                                                   animated:YES];
-//      [self.sideMenuViewController hideMenuViewController];
-//      break;
     case 2:
       [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"speakerViewController"]]
                                                    animated:YES];

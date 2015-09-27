@@ -969,47 +969,6 @@
             </objects>
             <point key="canvasLocation" x="477" y="855"/>
         </scene>
-        <!--Partners-->
-        <scene sceneID="lYW-bL-RJN">
-            <objects>
-                <viewController storyboardIdentifier="partnerViewController" id="Z56-8J-N3t" customClass="PartnerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QsB-ZX-aSR"/>
-                        <viewControllerLayoutGuide type="bottom" id="dfa-QE-tId"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LmA-mP-YBg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbZ-c2-yMY">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="530"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CbZ-c2-yMY" firstAttribute="leading" secondItem="LmA-mP-YBg" secondAttribute="leadingMargin" constant="-16" id="0MB-DN-gZL"/>
-                            <constraint firstItem="CbZ-c2-yMY" firstAttribute="top" secondItem="QsB-ZX-aSR" secondAttribute="bottom" id="2tY-io-VDq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CbZ-c2-yMY" secondAttribute="trailing" constant="-16" id="55G-xL-kS6"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="CbZ-c2-yMY" secondAttribute="bottom" constant="6" id="9Hc-Hy-RwP"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Partners" id="s1J-tF-bWr">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="B9Y-nr-vOe">
-                            <connections>
-                                <action selector="presentLeftMenuViewController:" destination="Z56-8J-N3t" id="vIw-Nk-9Ad"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="webview" destination="CbZ-c2-yMY" id="b53-Tg-9bk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iJZ-cv-3ot" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1289" y="1591"/>
-        </scene>
         <!--Login-->
         <scene sceneID="wrO-cm-wnp">
             <objects>
@@ -1047,25 +1006,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgb-Ao-UBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="477" y="156"/>
-        </scene>
-        <!--Partners-->
-        <scene sceneID="zI4-gt-xM6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uOK-gv-Mla" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Partners" image="Handshake50" id="IMM-jx-h8z"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hzi-gP-M6o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Z56-8J-N3t" kind="relationship" relationship="rootViewController" id="tpl-KR-Djk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n11-Yi-w55" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="469" y="1591"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2JX-EP-2eP">
@@ -1261,7 +1201,6 @@
     </scenes>
     <resources>
         <image name="Facebook" width="42" height="42"/>
-        <image name="Handshake50" width="24" height="16"/>
         <image name="Polarion-Logo-BB" width="62" height="72"/>
         <image name="Polarion-Logo-Gray25" width="25" height="25"/>
         <image name="SplashScreen" width="510" height="340"/>

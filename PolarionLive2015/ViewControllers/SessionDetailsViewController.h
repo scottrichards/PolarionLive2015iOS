@@ -12,6 +12,6 @@
 
 @class AgendaItem;
 
-@interface SessionDetailsViewController : UIViewController
+@interface SessionDetailsViewController : UIViewController 
 @property (strong, nonatomic) AgendaItem *agendaItem;
 @end

@@ -56,6 +56,7 @@
 		01A61F671B96C9B1000A7DAC /* AgendaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F661B96C9B1000A7DAC /* AgendaItem.m */; };
 		01A61F6A1B98AE5B000A7DAC /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */; };
 		01A61F6D1B98B3D7000A7DAC /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */; };
+		01B2A46C1BBCE57100D959AC /* ExpertsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2A46B1BBCE57100D959AC /* ExpertsViewController.m */; };
 		01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */; };
 		01E578EE1BB772E400D4D498 /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E578ED1BB772E400D4D498 /* PartnersViewController.m */; };
 /* End PBXBuildFile section */
@@ -150,6 +151,8 @@
 		01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewController.m; sourceTree = "<group>"; };
 		01A61F6B1B98B3D7000A7DAC /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewCell.h; sourceTree = "<group>"; };
 		01A61F6C1B98B3D7000A7DAC /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewCell.m; sourceTree = "<group>"; };
+		01B2A46A1BBCE57100D959AC /* ExpertsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertsViewController.h; sourceTree = "<group>"; };
+		01B2A46B1BBCE57100D959AC /* ExpertsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertsViewController.m; sourceTree = "<group>"; };
 		01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		01E578EC1BB772E400D4D498 /* PartnersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnersViewController.h; sourceTree = "<group>"; };
@@ -305,6 +308,8 @@
 			children = (
 				01673F6F1B8517A9003BF37F /* AgendaTableViewController.h */,
 				01673F701B8517A9003BF37F /* AgendaTableViewController.m */,
+				01B2A46A1BBCE57100D959AC /* ExpertsViewController.h */,
+				01B2A46B1BBCE57100D959AC /* ExpertsViewController.m */,
 				01673F6C1B85136A003BF37F /* HomeViewController.h */,
 				01673F6D1B85136A003BF37F /* HomeViewController.m */,
 				016740591B8B8F34003BF37F /* LeftMenuViewController.h */,
@@ -313,6 +318,8 @@
 				01673FAF1B855D4D003BF37F /* LoginViewController.m */,
 				014F315C1B8CF5D80062FC24 /* MapViewController.h */,
 				014F315D1B8CF5D80062FC24 /* MapViewController.m */,
+				01E578EC1BB772E400D4D498 /* PartnersViewController.h */,
+				01E578ED1BB772E400D4D498 /* PartnersViewController.m */,
 				01CF8BBD1B9622E40096F438 /* QRCodeViewController.h */,
 				01CF8BBE1B9622E40096F438 /* QRCodeViewController.m */,
 				01154F541B94C5DB00A2D862 /* RaffleViewController.h */,
@@ -329,8 +336,6 @@
 				01A61F691B98AE5B000A7DAC /* SpeakerTableViewController.m */,
 				01154F571B94F11F00A2D862 /* WebViewController.h */,
 				01154F581B94F11F00A2D862 /* WebViewController.m */,
-				01E578EC1BB772E400D4D498 /* PartnersViewController.h */,
-				01E578ED1BB772E400D4D498 /* PartnersViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				01CF8BBF1B9622E40096F438 /* QRCodeViewController.m in Sources */,
 				01673EEB1B842121003BF37F /* PolarionLive2015.xcdatamodeld in Sources */,
 				014F315E1B8CF5D80062FC24 /* MapViewController.m in Sources */,
+				01B2A46C1BBCE57100D959AC /* ExpertsViewController.m in Sources */,
 				01154F5C1B94F85500A2D862 /* URLService.m in Sources */,
 				01673F691B851035003BF37F /* SessionInfo.m in Sources */,
 				01154F561B94C5DB00A2D862 /* RaffleViewController.m in Sources */,

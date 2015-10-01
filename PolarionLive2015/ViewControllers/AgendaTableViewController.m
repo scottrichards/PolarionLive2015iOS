@@ -220,10 +220,23 @@ static CGFloat kSectionHeaderHeight = 40.0F;  // Section Header Height with the 
     }
   }
   if (dateObject && indexPath.row < [dateObject.agendaItems count]) {
-    SessionDetailsViewController *sessionDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsController"];
-    if (sessionDetailsVC) {
-      sessionDetailsVC.agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
-      [self.navigationController pushViewController:sessionDetailsVC animated:YES];
+    DateObject *dateObject = _dateArray[indexPath.section];
+    if (dateObject && indexPath.row < [dateObject.agendaItems count]) {
+      AgendaItem *agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
+      if ([agendaItem.sessionName isEqualToString:@"Meet the Experts"]) {
+        SessionDetailsViewController *sessionDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsController"];
+        if (sessionDetailsVC) {
+          sessionDetailsVC.agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
+          [self.navigationController pushViewController:sessionDetailsVC animated:YES];
+        }
+        
+      } else {
+        SessionDetailsViewController *sessionDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsController"];
+        if (sessionDetailsVC) {
+          sessionDetailsVC.agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
+          [self.navigationController pushViewController:sessionDetailsVC animated:YES];
+        }
+      }
     }
   }
 }

@@ -83,10 +83,11 @@
         }
       }];
     } else {
-      [cell.speakerImage setImage:nil];
-      cell.speakerImage.layer.borderWidth = 0;
-      cell.speakerImage.layer.borderColor = [[UIColor whiteColor] CGColor];
-      cell.speakerImage.layer.masksToBounds = NO;
+      [cell.speakerImage setImage:[UIImage imageNamed:@"userGray"]];
+      cell.speakerImage.layer.cornerRadius = cell.speakerImage.frame.size.height/2;
+      cell.speakerImage.layer.masksToBounds = YES;
+      cell.speakerImage.layer.borderWidth = 2;
+      cell.speakerImage.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     }
   }
   return cell;

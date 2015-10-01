@@ -30,8 +30,6 @@
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
 @property (assign) int presenterRating;
 @property (assign) int contentRating;
-
-@property (strong, nonatomic) NSArray *pickerDataSourceArray;
 @end
 
 @implementation SessionDetailsViewController
@@ -44,7 +42,6 @@
   self.presenters.text = self.agendaItem.presenter;
   self.navigationItem.title = @"Session Details";
   self.location.text = self.agendaItem.location;
-  self.pickerDataSourceArray =  [[NSArray alloc] initWithObjects:@"Polarion Rendering API & Widgets",@"Polarion Integrations",@"Process & Configuration",@"", nil];
   if ([self.presenters.text length] == 0) // if we don't have any presenter's hide the label
   {
     
@@ -115,7 +112,7 @@
     sessionRating[@"contentRating"] = [NSNumber numberWithInt:self.contentRating];
     sessionRating[@"session"] = self.agendaItem.pfObject;
     sessionRating[@"user"] = [PFUser currentUser];
-    [sessionRating saveInBackground];
+    [sessionRating saveEventually];
     [self.navigationController popViewControllerAnimated:YES];
   }
 }

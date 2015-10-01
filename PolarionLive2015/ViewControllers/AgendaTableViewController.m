@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "SessionInfo.h"
 #import "SessionDetailsViewController.h"
+#import "ExpertsViewController.h"
 #import "DateObject.h"
 #import "AgendaItem.h"
 
@@ -224,10 +225,9 @@ static CGFloat kSectionHeaderHeight = 40.0F;  // Section Header Height with the 
     if (dateObject && indexPath.row < [dateObject.agendaItems count]) {
       AgendaItem *agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
       if ([agendaItem.sessionName isEqualToString:@"Meet the Experts"]) {
-        SessionDetailsViewController *sessionDetailsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"sessionDetailsController"];
-        if (sessionDetailsVC) {
-          sessionDetailsVC.agendaItem = [dateObject.agendaItems objectAtIndex:indexPath.row];
-          [self.navigationController pushViewController:sessionDetailsVC animated:YES];
+        ExpertsViewController *expertsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"expertsViewController"];
+        if (expertsVC) {
+          [self.navigationController pushViewController:expertsVC animated:YES];
         }
         
       } else {

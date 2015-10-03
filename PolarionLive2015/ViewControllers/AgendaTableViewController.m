@@ -314,6 +314,7 @@ static CGFloat kSectionHeaderHeight = 40.0F;  // Section Header Height with the 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
   NSLog(@"Search Bar BEGIN Editing");
+  [searchBar setShowsCancelButton:YES animated:YES];
   _isSearching = YES;
 }
 
@@ -321,6 +322,7 @@ static CGFloat kSectionHeaderHeight = 40.0F;  // Section Header Height with the 
 {
   NSLog(@"Search Bar END Editing");
   _isSearching = NO;
+  [searchBar setShowsCancelButton:NO animated:YES];
   [self.tableView reloadData];
 }
 

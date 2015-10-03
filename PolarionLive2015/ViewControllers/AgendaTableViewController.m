@@ -60,16 +60,21 @@ static CGFloat kSectionHeaderHeight = 40.0F;  // Section Header Height with the 
 
 #pragma mark - Data Structures
 
+// load the data from Parse
 - (void)loadData
 {
   PFQuery *query = [PFQuery queryWithClassName:@"Agenda"];
+  query.cachePolicy = kPFCachePolicyNetworkElseCache;
   [query orderByAscending:@"start"];
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
   [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
     if (!error) {
+      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
       _sessionsArray = objects;
       [self orderByDate:objects];
       [self.tableView reloadData];
     } else {
+      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
       // Log details of the failure
       NSLog(@"Error: %@ %@", error, [error userInfo]);
     }

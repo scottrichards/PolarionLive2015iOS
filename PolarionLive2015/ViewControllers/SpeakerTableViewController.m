@@ -40,13 +40,17 @@
 
 - (void)loadData
 {
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
   PFQuery *query = [PFQuery queryWithClassName:@"Speakers"];
+  query.cachePolicy = kPFCachePolicyNetworkElseCache;
   [query orderByAscending:@"name"];
   [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
     if (!error) {
+      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
       _speakersArray = objects;
       [self.tableView reloadData];
     } else {
+      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
       // Log details of the failure
       NSLog(@"Error: %@ %@", error, [error userInfo]);
     }

@@ -11,12 +11,12 @@
 #import "SessionRating.h"
 #import "AgendaItem.h"
 
-#define CONTENT_RATING_X 140
-#define CONTENT_RATING_Y 320
+#define CONTENT_RATING_X 100
+#define CONTENT_RATING_Y 6
 
 
-#define PRESENTATION_RATING_X 140
-#define PRESENTATION_RATING_Y 360
+#define PRESENTATION_RATING_X 100
+#define PRESENTATION_RATING_Y 48
 
 @interface SessionDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *time;
@@ -97,8 +97,8 @@
     //        [self.simpleRatingControl setRating:self.delegate.logInfo.rating];
     //    }
     
-    [self.view addSubview:self.contentRatingControl];
-    [self.view addSubview:self.presenterRatingControl];
+    [self.ratingView addSubview:self.contentRatingControl];
+    [self.ratingView addSubview:self.presenterRatingControl];
   } else {
     [self.rateButton setHidden:YES];
     [self.ratingView setHidden:YES];
@@ -111,7 +111,10 @@
     sessionRating[@"presenterRating"] = [NSNumber numberWithInt:self.presenterRating];
     sessionRating[@"contentRating"] = [NSNumber numberWithInt:self.contentRating];
     sessionRating[@"session"] = self.agendaItem.pfObject;
-    sessionRating[@"user"] = [PFUser currentUser];
+    PFUser *currentUser;
+    if (currentUser) {
+      sessionRating[@"user"] = [PFUser currentUser];
+    }
     [sessionRating saveEventually];
     [self.navigationController popViewControllerAnimated:YES];
   }

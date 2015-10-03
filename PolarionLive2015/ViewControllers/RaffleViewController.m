@@ -78,9 +78,11 @@
     PFObject *testimonial = [PFObject objectWithClassName:@"Testimonial"];
     testimonial[@"tesimonial"] = _testimonialView.text;
     testimonial[@"user"] = [PFUser currentUser];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [testimonial saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
       if (!succeeded) {
         NSLog(@"Error: %@",error);
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:@"There was an error, please check your connection and try again."
                                                        delegate:self
@@ -90,6 +92,7 @@
         return;
       } else {
         NSLog(@"Success!");
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         [UIView animateWithDuration: 0.5
                               delay: 1
                             options: UIViewAnimationCurveEaseOut

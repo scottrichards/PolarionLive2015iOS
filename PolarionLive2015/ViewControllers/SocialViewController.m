@@ -29,7 +29,7 @@
   if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
     SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     
-    [controller setInitialText:@"Meeting great people at Polarion Live 2015!"];
+    [controller setInitialText:@"Meeting great people at Polarion Live 2016!"];
     [self presentViewController:controller animated:YES completion:Nil];
   }
 }
@@ -39,7 +39,7 @@
   {
     SLComposeViewController *tweetSheet = [SLComposeViewController
                                            composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tweetSheet setInitialText:@"Learning lots at Polarion Live 2015!"];
+    [tweetSheet setInitialText:@"Learning lots at Polarion Live 2016!"];
     [self presentViewController:tweetSheet animated:YES completion:nil];
   }
 }

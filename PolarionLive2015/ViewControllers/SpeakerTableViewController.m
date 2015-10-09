@@ -98,6 +98,24 @@
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (indexPath.row < [_speakersArray count]) {
+    PFObject *object = _speakersArray[indexPath.row];
+    NSString *text = object[@"bio"];
+    if (text.length > 0) {
+      CGSize theSize = [text sizeWithFont:[UIFont systemFontOfSize:17.0f] constrainedToSize:CGSizeMake(310.0f, FLT_MAX) lineBreakMode:UILineBreakModeWordWrap];
+      NSLog(@"calculated size for %@: %f, %f",text, theSize.width, theSize.height);
+      return 190.0;
+    } else
+      return 95.0;
+  } else {
+    return 95.0;
+  }
+
+}
+
+
 
 
 @end
